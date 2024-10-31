@@ -51,25 +51,25 @@ const Education = () => {
           {education.map((item, index) => (
             <div
               key={index}
-              className={`relative flex ${index % 2 === 0?"justify-end":"justify-start"} w-[50%] text-white bg-gray-700 bg-opacity-20 rounded-lg`}
+              className={`relative  flex ${index % 2 === 0?"justify-end":"justify-start"} w-[50%] text-white bg-gray-700  bg-opacity-20 rounded-lg`}
             >
-              <div className={ index % 2 === 0?"absolute left-0 top-1/2 transform -translate-y-1/2 -rotate-90 text-4xl text-gray-600 font-bold":"absolute right-0 top-1/2 transform -translate-y-1/2 -rotate-90 text-4xl text-gray-600 font-bold"}>
+              <div className={ index % 2 === 0?"absolute left-0 z-10 top-1/2 transform -translate-y-1/2 -rotate-90 text-4xl text-gray-600  font-bold":"z-10 absolute right-0 top-1/2 transform -translate-y-1/2 -rotate-90 text-4xl text-gray-600 font-bold"}>
                 {item.year}
               </div>
               <div
                 className={
                   index % 2 === 0
-                    ? "absolute -left-[40%] w-[300px]"
-                    : "absolute -right-[40%] w-[300px]"
+                    ? "absolute -left-[40%] w-[300px] z-0"
+                    : "absolute -right-[40%] w-[300px] z-0"
                 }
               >
                 <img
                   src={item.image}
                   alt="education"
-                  className="w-[100%] opacity-75 transition-transform duration-300 ease-in-out transform hover:scale-105"
+                  className=" lg:w-[100%]  opacity-75 transition-transform duration-300 ease-in-out transform hover:scale-110"
                 />
               </div>
-              <div className="flex flex-col gap-4 w-[90%] px-6 py-4 ">
+              <div className="flexflex-col gap-4 w-[90%] px-6 py-4 z-10 ">
                 <div className="flex flex-col">
                   <div className="text-lg text-sky-500 font-semibold">
                     {item.title}

@@ -54,7 +54,7 @@ const Skill = () => {
   return (
     <>
       <div
-        className="flex flex-col gap-10 px-6 py-20
+        className="flex flex-col gap-10 px-6 py-20 mt-10
       "
       >
         <div className="flex flex-col items-center ">
