@@ -11,8 +11,8 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          '0%, 100%': { opacity: 0 },
-          '50%': { opacity: 0.5 },
+          '0%, 100%': { opacity: 0, color: '#000' },
+          '50%': { opacity: 1 , color: 'skyblue'},
         },
       },
     },

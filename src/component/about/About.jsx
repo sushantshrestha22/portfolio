@@ -5,9 +5,10 @@ import Image from "../../assets/image/Image3.png";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-br from-black to-[#0F172A] text-white  grid grid-cols-2 px-20">
+    // bg-gradient-to-br from-black to-[#0F172A]
+    <div className=" text-white  grid grid-cols-2 px-20">
     <div className="flex justify-center items-center  box-border  ">
-      <img src={Image} alt="image" />
+      <img src={Image} alt="image" className='opacity-75' />
     </div>
     <div className=" w-full flex flex-col  justify-evenly ">
         <div className="flex flex-col items-start ">
