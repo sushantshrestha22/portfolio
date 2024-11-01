@@ -80,7 +80,7 @@ export default function Experience() {
                       {item.title}
                     </Typography>
                     <Typography>
-                      <div className="w-[65%]">{item.description}</div>
+                      <span className="w-[65%]">{item.description}</span>
                     </Typography>
                   </TimelineContent>
                 </TimelineItem>
