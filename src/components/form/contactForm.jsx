@@ -29,10 +29,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full bg-[#DCDBFF] rounded-lg">
-      <h1 className="text-2xl font-bold text-center p-2">
-        We’re Just a Message Away!
-      </h1>
+    <div className="w-full bg-black bg-opacity-10 rounded-lg">
+      {/* <h1 className="text-2xl font-bold text-accent text-center p-2">
+        
+      </h1> */}
       <hr />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 max-sm:grid-cols-1 max-md:px-10 gap-4 w-full p-4">
@@ -41,49 +41,59 @@ const ContactForm = () => {
             <Input
               type="text"
               id="name"
-              className="w-full border border-primary"
+              className="w-full border border-accent decoration"
               {...register("name")}
             />
-            {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+            {errors.name && (
+              <p className="text-red-500">{errors.name.message}</p>
+            )}
           </div>
           <div>
             <Label htmlFor="email">Email</Label>
             <Input
               type="email"
               id="email"
-              className="w-full border border-primary"
+              className="w-full border border-accent decoration"
               {...register("email")}
             />
-            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+            {errors.email && (
+              <p className="text-red-500">{errors.email.message}</p>
+            )}
           </div>
           <div>
             <Label htmlFor="phone">Phone</Label>
             <Input
               type="text"
               id="phone"
-              className="w-full border border-primary"
+              className="w-full border border-accent decoration"
               {...register("phone")}
             />
-            {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+            {errors.phone && (
+              <p className="text-red-500">{errors.phone.message}</p>
+            )}
           </div>
           <div>
             <Label htmlFor="subject">Subject</Label>
             <Input
               type="text"
               id="subject"
-              className="w-full border border-primary"
+              className="w-full border border-accent decoration"
               {...register("subject")}
             />
-            {errors.subject && <p className="text-red-500">{errors.subject.message}</p>}
+            {errors.subject && (
+              <p className="text-red-500">{errors.subject.message}</p>
+            )}
           </div>
           <div className="md:col-span-2">
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
-              className="w-full border border-primary"
+              className="w-full border border-accent decoration"
               {...register("message")}
             />
-            {errors.message && <p className="text-red-500">{errors.message.message}</p>}
+            {errors.message && (
+              <p className="text-red-500">{errors.message.message}</p>
+            )}
           </div>
           <Button
             variant="ghost"

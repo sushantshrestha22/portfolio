@@ -15,62 +15,62 @@ const Skills = () => {
     {
       id: 1,
       name: "React",
-      icon: <FaReact className="h-16 w-16" />,
+      icon: <FaReact className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 2,
       name: "Next.js",
-      icon: <TbBrandNextjs className="h-16 w-16" />,
+      icon: <TbBrandNextjs className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 3,
       name: "TailwindCSS",
-      icon: <RiTailwindCssFill className="h-16 w-16" />,
+      icon: <RiTailwindCssFill className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 4,
       name: "Shadcn",
-      icon: <SiShadcnui className="h-16 w-16" />,
+      icon: <SiShadcnui className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 5,
       name: "Github",
-      icon: <FaGithub className="h-16 w-16" />,
+      icon: <FaGithub className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 6,
       name: "Figma",
-      icon: <FaFigma className="h-16 w-16" />,
+      icon: <FaFigma className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 7,
       name: "Javascript",
-      icon: <RiJavascriptLine className="h-16 w-16" />,
+      icon: <RiJavascriptLine className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 8,
       name: "Postman",
-      icon: <SiPostman className="h-16 w-16" />,
+      icon: <SiPostman className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 9,
       name: "Material-UI",
-      icon: <SiMui className="h-16 w-16" />,
+      icon: <SiMui className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 10,
       name: "Bootstrap",
-      icon: <FaBootstrap className="h-16 w-16" />,
+      icon: <FaBootstrap className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 11,
       name: "Java",
-      icon: <FaJava className="h-16 w-16" />,
+      icon: <FaJava className="h-12 w-12 md:h-16 md:w-16" />,
     },
     {
       id: 12,
       name: "Spring Boot",
-      icon: <SiSpringboot className="h-16 w-16" />,
+      icon: <SiSpringboot className="h-12 w-12 md:h-16 md:w-16" />,
     },
   ];
 
@@ -80,14 +80,14 @@ const Skills = () => {
         Skills
       </div>
       <div className="w-full">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
           {skills.map((skill) => (
             <div
               key={skill.id}
               className="flex items-center gap-2 bg-black bg-opacity-10 justify-center rounded flex-col py-4"
             >
               {skill.icon}
-              <div className="font-semibold text-accent">{skill.name}</div>
+              <div className="font-semibold text-accent max-md:text-sm">{skill.name}</div>
             </div>
           ))}
         </div>

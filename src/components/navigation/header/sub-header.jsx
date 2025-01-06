@@ -47,7 +47,7 @@ const Subheader = () => {
               </div>
             ))}
           </div>
-          <Link href="/admissionForm">
+          <Link href="/contact">
             <Button variant="ghost" size="lg" className="max-md:hidden ">
               Contact Me
             </Button>

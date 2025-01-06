@@ -2,6 +2,7 @@ import React from "react";
 import Photo from "@/assets/image/Photo.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -13,7 +14,9 @@ const Home = () => {
             <div className="text-2xl font-bold">
               Hi, I'm <strong>Sushant Shrestha</strong>
             </div>
-            <div className="text-2xl font-bold">a <strong className="text-accent">Frontend Developer</strong>.</div>
+            <div className="text-2xl font-bold">
+              a <strong className="text-accent">Frontend Developer</strong>.
+            </div>
           </div>
           <div className="text-justify text-lg leading-relaxed">
             I am a dedicated frontend developer with a strong passion for
@@ -24,16 +27,22 @@ const Home = () => {
           </div>
           <div className="flex gap-4">
             <Button variant="ghost" size="lg">
-              Download CV
+              Download Resume
             </Button>
-            <Button variant="ghost" size="lg">
-              Contact Me
-            </Button>
+            {/* <Link href="/contact">
+              <Button variant="ghost" size="lg">
+                Contact Me
+              </Button>
+            </Link> */}
           </div>
         </div>
-        <div className="flex justify-center items-center w-full">
+        <div className="flex justify-center items-center w-full max-md:hidden">
           <div className="rounded-full overflow-hidden border-accent shadow-md shadow-accent pt-6 transition-all duration-1000 ease-in-out shadow:animate-pulse">
-            <Image src={Photo} alt="Sushant Shrestha" className="w-full h-auto brightness-75 " />
+            <Image
+              src={Photo}
+              alt="Sushant Shrestha"
+              className="w-full h-auto brightness-75 "
+            />
           </div>
         </div>
       </div>

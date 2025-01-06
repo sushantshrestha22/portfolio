@@ -66,7 +66,7 @@ const Projects = () => {
       <div className="w-full text-center text-xl font-bold underline decoration-accent decoration-4 decoration-dotted py-10">
         Projects
       </div>
-      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {projects.map((project) => (
           <div key={project.id} className="flex flex-col  text-sm">
             <div className="w-full">
