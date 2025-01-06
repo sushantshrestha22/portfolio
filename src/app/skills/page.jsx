@@ -76,7 +76,7 @@ const Skills = () => {
 
   return (
     <div className="flex flex-col gap-10 lg:px-20 px-10 min-h-[50vh] items-center justify-center">
-      <div className="w-full text-center text-xl font-bold underline decoration-accent decoration-4 decoration-dotted ">
+      <div className="w-full text-center text-xl font-bold underline decoration-accent decoration-4 decoration-dotted pt-10">
         Skills
       </div>
       <div className="w-full">

@@ -1,6 +1,7 @@
 import Education from "./education/page";
 import Experience from "./experience/page";
 import Home from "./home/page";
+import Projects from "./projects/page";
 import Skills from "./skills/page";
 
 const First = () => {
@@ -10,6 +11,7 @@ const First = () => {
       <Education />
       <Experience />
       <Skills />
+      <Projects />
     </div>
   );
 };

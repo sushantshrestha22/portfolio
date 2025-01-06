@@ -21,10 +21,6 @@ const Navbar = ({ qrImage }) => {
       link: "/home",
     },
     {
-      title: "About",
-      link: "/about",
-    },
-    {
       title: "Education",
       link: "/education",
     },
