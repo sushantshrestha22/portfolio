@@ -26,9 +26,11 @@ const Home = () => {
             updated with the latest industry trends.
           </div>
           <div className="flex gap-4">
-            <Button variant="ghost" size="lg">
-              Download Resume
-            </Button>
+            <a href="./Resume.pdf" download="Sushant Shrestha Resume">
+              <Button variant="ghost" size="lg">
+                Download CV
+              </Button>
+            </a>
             {/* <Link href="/contact">
               <Button variant="ghost" size="lg">
                 Contact Me
