@@ -9,11 +9,11 @@ export default function Layout() {
       <SidebarProvider className="">
         <AppSidebar />
         <main className="min-w-0 flex-1 bg-primary text-primary-foreground px-2">
-          <div className="flex">
+          <div className="flex h-[5vh]" >
             <SidebarTrigger className="hover:bg-primary-foreground hover:text-primary" />
             {/* <div>hello world</div> */}
           </div>
-          <div className="p-4 h-[95vh] ">
+          <div className=" h-[95vh] ">
             <Outlet />
           </div>
         </main>

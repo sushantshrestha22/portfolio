@@ -21,6 +21,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import React from "react";
 import Logo from "@/assets/images/logo.png";
+import { typo } from "@/constant/typography";
 
 // import { useQuery } from "@tanstack/react-query";
 // import { fetchData } from "@/api/methods";
@@ -117,55 +118,44 @@ export function AppSidebar() {
     },
     {
       title: "Education",
-      url: "#",
+      url: "/education",
       icon: Inbox,
     },
     {
       title: "Experience",
-      url: "#",
+      url: "/experience",
       icon: Calendar,
     },
     {
       title: "Skills",
-      url: "#",
+      url: "/skills",
       icon: Search,
     },
     {
       title: "Projects",
-      url: "#",
+      url: "/projects",
       icon: Settings,
     },
     {
       title: "Contact",
-      url: "#",
+      url: "/contact",
       icon: Settings,
     },
   ];
-
-  // if (
-  //   driverLoading ||
-  //   companyLoading ||
-  //   driverIssueLoading ||
-  //   companyIssueLoading ||
-  //   generalLoading ||
-  //   deliveriesLoading
-  // ) {
-  //   return <SidebarSkeleton />;
-  // }
 
   return (
     <Sidebar className="h-[100vh]">
       <SidebarContent className="sidebar-content">
         <SidebarGroup>
           <SidebarGroupLabel
-            className="p-4  flex items-center h-28 
+            className="p-4 flex items-center h-28 
            justify-center sticky top-0 z-20 border-b border-white/10"
           >
             <img
               src={Logo}
               alt="LogoError"
               // className="h-full filter brightness-0 invert "
-              className="h-full"
+              className="h-full aspect-square"
             />
           </SidebarGroupLabel>
           <SidebarGroupContent className="flex flex-col gap-2 hello">
@@ -236,7 +226,9 @@ export function AppSidebar() {
                   ) : (
                     <Link to={item.url} key={idx}>
                       <SidebarMenuButton
-                        className={` hover:bg-primary hover:text-primary-foreground flex justify-between
+                        className={` hover:bg-primary hover:text-primary-foreground flex justify-between ${
+                          typo.h5
+                        } 
                         ${
                           pathname.includes(item.url) && idx !== 0
                             ? "bg-primary text-primary-foreground"

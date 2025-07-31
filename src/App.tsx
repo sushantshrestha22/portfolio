@@ -19,18 +19,8 @@ const adminOnlyRoutes: any[] = [
   {
     element: <Layout />,
     errorElement: <Error />,
-    children: [
-      {
-        path: "/",
-        element: withSuspense(Home),
-      },
-      {
-        path: "/home",
-        element: withSuspense(Home),
-      },
-    ],
+    children: [...routes],
   },
-  ...routes,
 ];
 
 const router = createBrowserRouter([
