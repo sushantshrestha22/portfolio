@@ -1,19 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Suspense } from "react";
 import Layout from "@/layout/layout";
 import Error from "@/common/error";
 import NotFound from "@/common/not-found";
-import Loading from "@/common/loading";
-import { lazy } from "react";
 import { routes } from "./routes/routes";
-
-const Home = lazy(() => import("@/pages/home/page"));
-
-const withSuspense = (Component: any) => (
-  <Suspense fallback={<Loading />}>
-    <Component />
-  </Suspense>
-);
 
 const adminOnlyRoutes: any[] = [
   {
