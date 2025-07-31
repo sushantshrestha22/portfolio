@@ -25,7 +25,7 @@ const Home = () => {
         </div>
       </section>
       <section className="flex justify-center items-end h-full  relative">
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent blur-xl rounded-full aspect-square w-[90%] animate-pulse  top-3/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-accent via-accent to-accent blur-3xl rounded-full aspect-square w-[90%] animate-pulse top-3/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
         <img src={Photo} alt="Sushant Shrestha" className="h-[90vh] z-10" />
       </section>
     </main>

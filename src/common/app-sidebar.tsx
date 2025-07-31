@@ -6,6 +6,9 @@ import {
   Search,
   Settings,
 } from "lucide-react";
+import { FaFacebook, FaLinkedin } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 import {
   Sidebar,
@@ -22,24 +25,12 @@ import { Link, useLocation } from "react-router-dom";
 import React from "react";
 import Logo from "@/assets/images/logo.png";
 import { typo } from "@/constant/typography";
+import type { ItemsType, SocialLink } from "@/utils/types/types";
 
 // import { useQuery } from "@tanstack/react-query";
 // import { fetchData } from "@/api/methods";
 // import { API_URL } from "@/constant/constant";
 // import SidebarSkeleton from "@/common/skeleton/sidebar";
-
-interface ItemsType {
-  title: string;
-  url: string;
-  icon: React.ComponentType<any>;
-  dropdown?: {
-    title: string;
-    url: string;
-    icon: React.ComponentType<any>;
-    notify?: number;
-  }[];
-  notify?: number;
-}
 
 export function AppSidebar() {
   // const pathname = useLocation().pathname;
@@ -56,58 +47,29 @@ export function AppSidebar() {
     });
   };
 
-  // Fetching data for drivers, companies, issues, general settings, and deliveries.
-  // const { data: driverData, isLoading: driverLoading } = useQuery({
-  //   queryKey: ["driver-sidebar"],
-  //   queryFn: async () => {
-  //     const response = await fetchData("/api/users?role=driver&status=pending");
-  //     return response;
-  //   },
-  // });
-  // const { data: companyData, isLoading: companyLoading } = useQuery({
-  //   queryKey: ["company-sidebar"],
-  //   queryFn: async () => {
-  //     const response = await fetchData(
-  //       "/api/users?role=company&status=pending"
-  //     );
-  //     return response;
-  //   },
-  // });
-
-  // const { data: driverIssueData, isLoading: driverIssueLoading } = useQuery({
-  //   queryKey: ["driver-issue-sidebar"],
-  //   queryFn: async () => {
-  //     const response = await fetchData(
-  //       "/api/issues?status=pending&role=driver"
-  //     );
-  //     return response;
-  //   },
-  // });
-  // const { data: companyIssueData, isLoading: companyIssueLoading } = useQuery({
-  //   queryKey: ["company-issue-sidebar"],
-  //   queryFn: async () => {
-  //     const response = await fetchData(
-  //       "/api/issues?status=pending&role=company"
-  //     );
-  //     return response;
-  //   },
-  // });
-
-  // const { data: generalData, isLoading: generalLoading } = useQuery({
-  //   queryKey: ["general"],
-  //   queryFn: async () => {
-  //     const response = await fetchData("/api/settings/general");
-  //     return response?.data;
-  //   },
-  // });
-
-  // const { data: deliveriesData, isLoading: deliveriesLoading } = useQuery({
-  //   queryKey: ["requests-sidebar"],
-  //   queryFn: async () => {
-  //     const response = await fetchData("/api/requests?status=pending");
-  //     return response;
-  //   },
-  // });
+  //social media links
+  const socialLinks: SocialLink[] = [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/sushantshrestha/",
+      icon: <FaLinkedin className="h-5 w-5" />,
+    },
+    {
+      name: "Mail",
+      url: "mailto:sushant@example.com",
+      icon: <IoMdMail className="h-6 w-6" />,
+    },
+    {
+      name: "Facebook",
+      url: "https://facebook.com/sushantshrestha",
+      icon: <FaFacebook className="h-5 w-5 " />,
+    },
+    {
+      name: "WhatsApp",
+      url: "https://wa.me/9779841234567",
+      icon: <IoLogoWhatsapp className="h-6 w-6" />, // Replace with WhatsApp icon if available
+    },
+  ];
 
   // Menu items.
   const items: ItemsType[] = [
@@ -144,11 +106,11 @@ export function AppSidebar() {
   ];
 
   return (
-    <Sidebar className="h-[100vh]">
+    <Sidebar className="h-[100vh] py-10 bg-secondary-foreground">
       <SidebarContent className="sidebar-content">
         <SidebarGroup>
           <SidebarGroupLabel
-            className="p-4 flex items-center h-28 
+            className="p-4 flex items-center h-48 
            justify-center sticky top-0 z-20 border-b border-white/10"
           >
             <img
@@ -158,7 +120,8 @@ export function AppSidebar() {
               className="h-full aspect-square"
             />
           </SidebarGroupLabel>
-          <SidebarGroupContent className="flex flex-col gap-2 hello">
+          <hr className="w-full" />
+          <SidebarGroupContent className="flex flex-col gap-2 mt-5 mb-4 ">
             <SidebarMenu>
               {items?.map((item: ItemsType, idx: number) => (
                 <SidebarMenuItem key={item.title} className="">
@@ -226,7 +189,7 @@ export function AppSidebar() {
                   ) : (
                     <Link to={item.url} key={idx}>
                       <SidebarMenuButton
-                        className={` hover:bg-primary hover:text-primary-foreground flex justify-between ${
+                        className={` hover:bg-primary hover:text-primary-foreground flex justify-center ${
                           typo.h5
                         } 
                         ${
@@ -241,8 +204,10 @@ export function AppSidebar() {
                         }
                         `}
                       >
-                        <span className="flex items-center gap-2">
-                          <item.icon className="h-4 w-4 mr-2" />
+                        <span className="flex items-center gap-2 font-bold justify-start w-[60%]">
+                          <span>
+                            <item.icon className="h-4 w-4 mr-2" />
+                          </span>
                           {item.title}
                         </span>
                         {item?.notify && item.notify > 0 ? (
@@ -259,9 +224,29 @@ export function AppSidebar() {
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
-          <SidebarFooter>copyright 2082</SidebarFooter>
         </SidebarGroup>
+        <hr className="w-full" />
       </SidebarContent>
+      <SidebarFooter className="place-items-center">
+        <p>© 2082 All rights reserved.</p>
+        <div className="flex gap-4 items-center justify-center mt-2">
+          {socialLinks.map((link: SocialLink) => (
+            <Link
+              key={link.name}
+              to={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary"
+            >
+              {link.icon ? (
+                <span className="h-5 w-5">{link.icon}</span>
+              ) : (
+                <span>{link.name}</span>
+              )}
+            </Link>
+          ))}
+        </div>
+      </SidebarFooter>
     </Sidebar>
   );
 }

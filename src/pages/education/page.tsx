@@ -36,8 +36,8 @@ const Education = () => {
   ];
 
   return (
-    <main className="grid grid-cols-3 gap-4 p-4">
-      <section className="border border-secondary col-span-2">
+    <main className="grid grid-cols-3 gap-4 p-4 h-full">
+      <section className="border border-secondary col-span-2 rounded-xs">
         {data[triggeredIndex] && (
           <section className="flex flex-col gap-4 p-4">
             <section className="flex items-center gap-4">
@@ -52,12 +52,12 @@ const Education = () => {
                 <span className={`${typo.h4} text-secondary-foreground`}>
                   {data[triggeredIndex].level}
                 </span>
-                <p className={`${typo.h5} text-secondary`}>
+                <p className={`${typo.h6} text-secondary`}>
                   {data[triggeredIndex].data}
                 </p>
               </div>
             </section>
-            <p className={`${typo.span} text-primary-foreground`}>
+            <p className={`${typo.h5} text-primary-foreground`}>
               {data[triggeredIndex].description}
             </p>
             <div className="flex items-center gap-2"></div>
@@ -65,14 +65,14 @@ const Education = () => {
         )}
       </section>
 
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col justify-between">
         {data.map((item, index) => (
           <section
             className={`flex items-center gap-4 bg-accent p-4 ${
               index === triggeredIndex
                 ? "bg-secondary-foreground text-primary"
                 : ""
-            } cursor-pointer`}
+            } cursor-pointer min-h-[20vh] rounded-xs`}
             key={index}
             onClick={() => {
               setTriggeredIndex(index);
