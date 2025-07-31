@@ -21,6 +21,10 @@ const adminOnlyRoutes: any[] = [
     errorElement: <Error />,
     children: [
       {
+        path: "/",
+        element: withSuspense(Home),
+      },
+      {
         path: "/home",
         element: withSuspense(Home),
       },

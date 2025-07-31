@@ -13,7 +13,7 @@ export default function Layout() {
             <SidebarTrigger className="hover:bg-primary-foreground hover:text-primary" />
             {/* <div>hello world</div> */}
           </div>
-          <div className="p-4">
+          <div className="p-4 h-[95vh] ">
             <Outlet />
           </div>
         </main>
