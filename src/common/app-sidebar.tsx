@@ -106,7 +106,7 @@ export function AppSidebar() {
   ];
 
   return (
-    <Sidebar className="h-[100vh] py-10 bg-secondary-foreground">
+    <Sidebar className="h-[100vh] py-10 bg-sidebar-primary-foreground">
       <SidebarContent className="sidebar-content">
         <SidebarGroup>
           <SidebarGroupLabel
