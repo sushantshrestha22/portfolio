@@ -51,22 +51,22 @@ export function AppSidebar() {
   const socialLinks: SocialLink[] = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/sushantshrestha/",
+      url: "https://www.linkedin.com/in/sushant-shrestha-880911279/",
       icon: <FaLinkedin className="h-5 w-5" />,
     },
     {
       name: "Mail",
-      url: "mailto:sushant@example.com",
+      url: "mailto:newasushant.ns16@gmail.com",
       icon: <IoMdMail className="h-6 w-6" />,
     },
     {
       name: "Facebook",
-      url: "https://facebook.com/sushantshrestha",
+      url: "https://www.facebook.com/sushant.shrestha.566148/",
       icon: <FaFacebook className="h-5 w-5 " />,
     },
     {
       name: "WhatsApp",
-      url: "https://wa.me/9779841234567",
+      url: "https://wa.me/9779840967031",
       icon: <IoLogoWhatsapp className="h-6 w-6" />, // Replace with WhatsApp icon if available
     },
   ];
