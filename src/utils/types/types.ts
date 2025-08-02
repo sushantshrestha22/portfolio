@@ -1,9 +1,10 @@
 export interface Education {
-  data: string;
+  date: string;
   institution: string;
   level: string;
   description: string;
 }
+
 export interface ItemsType {
   title: string;
   url: string;
@@ -20,5 +21,11 @@ export interface ItemsType {
 export interface SocialLink {
   name: string;
   url: string;
-  icon?: React.ReactNode
+  icon?: React.ReactNode;
+}
+
+export interface ExperienceType {
+  company: string;
+  date: string;
+  description: string;
 }

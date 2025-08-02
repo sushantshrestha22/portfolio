@@ -7,7 +7,7 @@ const Education = () => {
   const [triggeredIndex, setTriggeredIndex] = React.useState<number>(0);
   const data: Education[] = [
     {
-      data: "May 2020- Present",
+      date: "May 2020- Present",
       institution: "Butwal Multiple Campus, Tribhuwan University",
       level:
         "Bachelor of Science in Computer Science and Information Technology",
@@ -16,19 +16,19 @@ const Education = () => {
     },
 
     {
-      data: "May 2020- Present",
+      date: "May 2020- Present",
       institution: "HUB I.T Training and Solution",
       level: "Web Development",
       description: "Graduated with honors, focusing on STEM subjects.",
     },
     {
-      data: "May 2020- Present",
+      date: "May 2020- Present",
       institution: "Scholars Home",
       level: "+2 Science",
       description: "Graduated with honors, focusing on STEM subjects.",
     },
     {
-      data: "May 2020- Present",
+      date: "May 2020- Present",
       institution: "New Horizon English Boarding Higher Secondary School",
       level: "SLC",
       description: "Graduated with honors, focusing on STEM subjects.",
@@ -46,14 +46,14 @@ const Education = () => {
                 <RiGraduationCapFill className="h-20 w-20 text-secondary-foreground" />
               </div>
               <div>
-                <h3 className={`${typo.h3} text-secondary`}>
+                <h3 className={`${typo.h4} text-secondary`}>
                   {data[triggeredIndex].institution}
                 </h3>
                 <span className={`${typo.h4} text-secondary-foreground`}>
                   {data[triggeredIndex].level}
                 </span>
-                <p className={`${typo.h6} text-secondary`}>
-                  {data[triggeredIndex].data}
+                <p className={`${typo.span} text-secondary`}>
+                  {data[triggeredIndex].date}
                 </p>
               </div>
             </section>
@@ -90,7 +90,7 @@ const Education = () => {
             </div>
             <section>
               <h4 className={`${typo.h4}`}>{item.institution}</h4>
-              <p className={`${typo.span}`}>{item.data}</p>
+              <p className={`${typo.span}`}>{item.date}</p>
             </section>
           </section>
         ))}

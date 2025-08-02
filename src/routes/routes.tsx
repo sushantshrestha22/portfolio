@@ -1,11 +1,11 @@
 import Loading from "@/common/loading";
 import { lazy, Suspense } from "react";
 const Home = lazy(() => import("@/pages/home/page"));
-const Projects = lazy(() => import("@/pages/Projects/page"));
+const Projects = lazy(() => import("@/pages/projects/page"));
 const Education = lazy(() => import("@/pages/education/page"));
-const Experience = lazy(() => import("@/pages/Experience/page"));
-const Contact = lazy(() => import("@/pages/Contact/page"));
-const Skills = lazy(() => import("@/pages/Skills/page"));
+const Experience = lazy(() => import("@/pages/experience/page"));
+const Contact = lazy(() => import("@/pages/contact/page"));
+const Skills = lazy(() => import("@/pages/skills/page"));
 
 const withSuspense = (Component: any) => (
   <Suspense fallback={<Loading />}>
