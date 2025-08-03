@@ -45,7 +45,7 @@ export default function Layout() {
             </DropdownMenu>
             {/* <div>hello world</div> */}
           </div>
-          <div className=" h-[95vh] ">
+          <div className=" min-h-[95vh] ">
             <Outlet />
           </div>
         </main>

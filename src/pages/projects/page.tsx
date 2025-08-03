@@ -14,7 +14,7 @@ const Projects = () => {
     {
       name: "Hubit Usersite",
       image: HubitUsersite,
-      url: "/projects/hubit-usersite",
+      url: "https://hubit.com.np/",
       description:
         "A user site for Hubit, showcasing various features and functionalities.",
       tags: ["Next.js", "Tailwind CSS", "Typescript", "Shadcn UI"],
@@ -22,7 +22,7 @@ const Projects = () => {
     {
       name: "RACCS CMS",
       image: Raccs,
-      url: "/projects/raccs-cms",
+      url: "",
       description:
         "A content management system for RACCS, built with React and Tailwind CSS.",
       tags: ["React", "Tailwind CSS", "Shadcn UI"],
@@ -30,7 +30,7 @@ const Projects = () => {
     {
       name: "Tilottama Admin",
       image: TilottamaAdmin,
-      url: "/projects/tilottama-admin",
+      url: "",
       description:
         "An admin dashboard for Tilottama, providing management features.",
       tags: ["React", "Tailwind CSS", "Shadcn UI"],
@@ -38,7 +38,7 @@ const Projects = () => {
     {
       name: "Tilottama User Site",
       image: TilottamaUser,
-      url: "/projects/tilottama-usersite",
+      url: "https://tilottamacampus.edu.np/",
       description:
         "A user-facing site for Tilottama, showcasing various functionalities.",
       tags: ["Next.js", "Tailwind CSS", "Shadcn UI"],
@@ -46,21 +46,21 @@ const Projects = () => {
     {
       name: "Transport Management System",
       image: Transport,
-      url: "/projects/transport-management-system",
+      url: "",
       description:
         "A transport management system for efficient logistics and transportation.",
       tags: ["Next.js", "Tailwind CSS", "Typescript", "Shadcn UI"],
     },
   ];
   return (
-    <main className={` grid grid-cols-3 gap-4 p-4`}>
+    <main className={` grid  sm:grid-cols-2  lg:grid-cols-3 gap-4 p-4`}>
       {data.map((project, index) => (
         <section key={index} className={`group border border-secondary p-4`}>
           <div className="relative ">
             <img src={project.image} alt={project.name} className=" " />
             <Link
               to={project.url}
-              className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+              className={`absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 ${project.url ? "" : "hidden"}`}
             >
               <Button className="bg-accent text-secondary-foreground">
                 View Project
