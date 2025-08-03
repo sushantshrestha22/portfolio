@@ -36,7 +36,7 @@ const Education = () => {
   ];
 
   return (
-    <main className="grid grid-cols-3 gap-4 p-4 h-full">
+    <main className="grid grid-cols-3 gap-4 p-4 min-h-[95vh]">
       <section className="border border-secondary col-span-2 rounded-xs">
         {data[triggeredIndex] && (
           <section className="flex flex-col gap-4 p-4">
