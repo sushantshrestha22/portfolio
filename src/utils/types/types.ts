@@ -29,3 +29,8 @@ export interface ExperienceType {
   date: string;
   description: string;
 }
+
+export interface Skill {
+  name: string;
+  icon: React.ReactNode;
+}

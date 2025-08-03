@@ -3,6 +3,7 @@ import Layout from "@/layout/layout";
 import Error from "@/common/error";
 import NotFound from "@/common/not-found";
 import { routes } from "./routes/routes";
+import { ThemeProvider } from "./components/theme-provider";
 
 const adminOnlyRoutes: any[] = [
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 };
 
 export default App;
