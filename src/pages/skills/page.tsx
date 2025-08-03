@@ -76,9 +76,9 @@ const reverseItems = data.reverse().map((skill, index) => (
 const Skills = () => {
   return (
     <div className="grid grid-cols-2 place-items-center px-10 h-[95vh] overflow-hidden">
-      <section className="flex justify-center items-end relative h-full ">
+      <section className="flex justify-center items-end relative h-full  ">
         <div className="absolute inset-0 bg-gradient-to-tr from-accent via-accent to-accent blur-3xl rounded-full aspect-square w-[90%] animate-pulse top-3/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-        <img src={Photo} alt="Sushant Shrestha" className="h-[90vh] z-10" />
+        <img src={Photo} alt="Sushant Shrestha" className="h-[90vh] object-cover  z-10" />
       </section>
       <section className="flex  justify-center items-center">
         <div className="relative h-[95vh] w-48 overflow-hidden">
