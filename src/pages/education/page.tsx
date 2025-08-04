@@ -36,8 +36,8 @@ const Education = () => {
   ];
 
   return (
-    <main className="grid grid-cols-3 gap-4 p-4 min-h-[95vh]">
-      <section className="border border-secondary col-span-2 rounded-xs">
+    <main className="grid lg:grid-cols-3 gap-4 p-4 min-h-[95vh]">
+      <section className="border border-secondary lg:col-span-2 rounded-xs">
         {data[triggeredIndex] && (
           <section className="flex flex-col gap-4 p-4">
             <section className="flex items-center gap-4">
@@ -65,7 +65,7 @@ const Education = () => {
         )}
       </section>
 
-      <section className="flex flex-col justify-between">
+      <section className="flex flex-col gap-4 justify-between">
         {data.map((item, index) => (
           <section
             className={`flex items-center gap-4 bg-accent p-4 ${
