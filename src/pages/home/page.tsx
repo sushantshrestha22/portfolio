@@ -19,7 +19,7 @@ const Home = () => {
           improving my skills with the latest technologies.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="@/assets/Resume.pdf" download="Sushant_Shrestha_Resume.pdf">
+          <a href="./Resume.pdf" download="Sushant_Shrestha_Resume.pdf">
             <Button className={`${typo.h5} cursor-pointer`}>View Resume</Button>
           </a>
           <Link to="/contact">
