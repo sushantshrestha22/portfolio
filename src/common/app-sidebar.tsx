@@ -106,147 +106,150 @@ export function AppSidebar() {
   ];
 
   return (
-    <Sidebar className="h-[100vh] py-10 bg-sidebar-primary-foreground">
-      <SidebarContent className="sidebar-content">
-        <SidebarGroup>
-          <SidebarGroupLabel
-            className="p-4 flex items-center h-48 
-           justify-center sticky top-0 z-20 border-b border-white/10"
-          >
-            <img
-              src={Logo}
-              alt="LogoError"
-              // className="h-full filter brightness-0 invert "
-              className="h-full aspect-square"
-            />
-          </SidebarGroupLabel>
-          <hr className="w-full" />
-          <SidebarGroupContent className="flex flex-col gap-2 mt-5 mb-4 ">
-            <SidebarMenu>
-              {items?.map((item: ItemsType, idx: number) => (
-                <SidebarMenuItem key={item.title} className="">
-                  {item.dropdown ? (
-                    <>
-                      <SidebarMenuButton
-                        onClick={() => handleDropdownToggle(idx)}
-                        className={`${
-                          item.dropdown.some((subItem) =>
-                            pathname.includes(subItem.url)
-                          ) && !openDropdowns[idx]
-                            ? "bg-primary text-primary-foreground rounded-sm"
-                            : ""
-                        } `}
-                      >
-                        <item.icon className="h-5 w-5 mr-2" />
-                        {item.title}
-                        {item?.dropdown?.some(
-                          (subItem) => subItem.notify && subItem.notify > 0
-                        ) && !openDropdowns[idx] ? (
-                          <span
-                            className="text-secondary bg-accent  rounded-sm w-2 h-2
+    <Sidebar className="h-[100vh] bg-sidebar-primary-foreground">
+      <SidebarContent className="sidebar-content place-content-center">
+        <SidebarGroup className="">
+          <div className="2xl:space-y-10">
+            <SidebarGroupLabel
+              className=" flex items-center  bg-sidebar-primary-foreground 
+           justify-center h-[10rem] z-20 border-b border-white/10"
+            >
+              <img
+                src={Logo}
+                alt="LogoError"
+                // className="h-full filter brightness-0 invert "
+                className="h-[8rem] aspect-square"
+              />
+            </SidebarGroupLabel>
+            {/* <hr className="w-full" /> */}
+            <SidebarGroupContent className="flex flex-col gap-2 ">
+              <SidebarMenu>
+                {items?.map((item: ItemsType, idx: number) => (
+                  <SidebarMenuItem key={item.title} className="">
+                    {item.dropdown ? (
+                      <>
+                        <SidebarMenuButton
+                          onClick={() => handleDropdownToggle(idx)}
+                          className={`${
+                            item.dropdown.some((subItem) =>
+                              pathname.includes(subItem.url)
+                            ) && !openDropdowns[idx]
+                              ? "bg-primary text-primary-foreground rounded-sm"
+                              : ""
+                          } `}
+                        >
+                          <item.icon className="h-5 w-5 mr-2" />
+                          {item.title}
+                          {item?.dropdown?.some(
+                            (subItem) => subItem.notify && subItem.notify > 0
+                          ) && !openDropdowns[idx] ? (
+                            <span
+                              className="text-secondary bg-accent  rounded-sm w-2 h-2
                               "
-                          ></span>
-                        ) : (
-                          ""
-                        )}
-                        <ChevronRight
-                          className={`h-5 w-5 ml-auto transition-transform ${
-                            openDropdowns[idx] ? "rotate-90" : ""
-                          }`}
-                        />
-                      </SidebarMenuButton>
-                      {openDropdowns[idx] && (
-                        <SidebarMenu className="mt-2 ">
-                          {item.dropdown.map((subItem: any) => (
-                            <SidebarMenuItem
-                              key={subItem.title}
-                              className={`ml-6 ${
-                                pathname.includes(subItem.url)
-                                  ? "bg-secondary text-primary rounded-sm"
-                                  : ""
-                              }`}
-                            >
-                              <Link to={subItem.url}>
-                                <SidebarMenuButton className="hover:bg-secondary hover:text-primary flex justify-between ">
-                                  <span className="flex items-center">
-                                    <subItem.icon className="h-5 w-5 mr-2" />
-                                    {subItem.title}
-                                  </span>
-                                  {subItem?.notify && subItem.notify > 0 ? (
-                                    <span
-                                      className={`text-secondary bg-accent px-1 min-w-4 text-center rounded-sm `}
-                                    >
-                                      {subItem.notify}
+                            ></span>
+                          ) : (
+                            ""
+                          )}
+                          <ChevronRight
+                            className={`h-5 w-5 ml-auto transition-transform ${
+                              openDropdowns[idx] ? "rotate-90" : ""
+                            }`}
+                          />
+                        </SidebarMenuButton>
+                        {openDropdowns[idx] && (
+                          <SidebarMenu className="mt-2 ">
+                            {item.dropdown.map((subItem: any) => (
+                              <SidebarMenuItem
+                                key={subItem.title}
+                                className={`ml-6 ${
+                                  pathname.includes(subItem.url)
+                                    ? "bg-secondary text-primary rounded-sm"
+                                    : ""
+                                }`}
+                              >
+                                <Link to={subItem.url}>
+                                  <SidebarMenuButton className="hover:bg-secondary hover:text-primary flex justify-between ">
+                                    <span className="flex items-center">
+                                      <subItem.icon className="h-5 w-5 mr-2" />
+                                      {subItem.title}
                                     </span>
-                                  ) : null}
-                                </SidebarMenuButton>
-                              </Link>
-                            </SidebarMenuItem>
-                          ))}
-                        </SidebarMenu>
-                      )}
-                    </>
-                  ) : (
-                    <Link to={item.url} key={idx}>
-                      <SidebarMenuButton
-                        className={` hover:bg-primary hover:text-primary-foreground flex justify-center ${
-                          typo.h5
-                        } 
+                                    {subItem?.notify && subItem.notify > 0 ? (
+                                      <span
+                                        className={`text-secondary bg-accent px-1 min-w-4 text-center rounded-sm `}
+                                      >
+                                        {subItem.notify}
+                                      </span>
+                                    ) : null}
+                                  </SidebarMenuButton>
+                                </Link>
+                              </SidebarMenuItem>
+                            ))}
+                          </SidebarMenu>
+                        )}
+                      </>
+                    ) : (
+                      <Link to={item.url} key={idx}>
+                        <SidebarMenuButton
+                          className={` hover:bg-muted hover:text-primary flex justify-center ${
+                            typo.h4
+                          } 
                         ${
                           pathname.includes(item.url) && idx !== 0
-                            ? "bg-primary text-primary-foreground"
+                            ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
                             : ""
                         }
                         ${
-                          pathname === item.url && idx === 0
-                            ? "bg-primary text-primary-foreground"
+                          (pathname === "/" && idx === 0) ||
+                          (pathname === "/home" && idx === 0)
+                            ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
                             : ""
                         }
                         `}
-                      >
-                        <span className="flex items-center gap-2 font-bold justify-start w-[60%]">
-                          <span>
-                            <item.icon className="h-4 w-4 mr-2" />
+                        >
+                          <span className="flex items-center gap-2 font-bold justify-start w-[60%]">
+                            <span>
+                              <item.icon className="h-4 w-4 mr-2" />
+                            </span>
+                            {item.title}
                           </span>
-                          {item.title}
-                        </span>
-                        {item?.notify && item.notify > 0 ? (
-                          <span
-                            className={`text-secondary bg-accent px-1 min-w-4 text-center rounded-sm `}
-                          >
-                            {item.notify}
-                          </span>
-                        ) : null}
-                      </SidebarMenuButton>
-                    </Link>
-                  )}
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
+                          {item?.notify && item.notify > 0 ? (
+                            <span
+                              className={`text-secondary bg-accent px-1 min-w-4 text-center rounded-sm `}
+                            >
+                              {item.notify}
+                            </span>
+                          ) : null}
+                        </SidebarMenuButton>
+                      </Link>
+                    )}
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+            <div className="place-items-center text-center">
+              <p>© 2082 All rights reserved.</p>
+              <div className="flex gap-4 items-center justify-center mt-2">
+                {socialLinks.map((link: SocialLink) => (
+                  <Link
+                    key={link.name}
+                    to={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-primary"
+                  >
+                    {link.icon ? (
+                      <span className="h-5 w-5">{link.icon}</span>
+                    ) : (
+                      <span>{link.name}</span>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </SidebarGroup>
-        <hr className="w-full" />
       </SidebarContent>
-      <SidebarFooter className="place-items-center">
-        <p>© 2082 All rights reserved.</p>
-        <div className="flex gap-4 items-center justify-center mt-2">
-          {socialLinks.map((link: SocialLink) => (
-            <Link
-              key={link.name}
-              to={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary"
-            >
-              {link.icon ? (
-                <span className="h-5 w-5">{link.icon}</span>
-              ) : (
-                <span>{link.name}</span>
-              )}
-            </Link>
-          ))}
-        </div>
-      </SidebarFooter>
+      <SidebarFooter className="place-items-center"></SidebarFooter>
     </Sidebar>
   );
 }

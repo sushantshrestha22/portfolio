@@ -36,7 +36,7 @@ const Education = () => {
   ];
 
   return (
-    <main className="grid lg:grid-cols-3 gap-4 p-4 min-h-[95vh]">
+    <main className="grid lg:grid-cols-3 gap-4 py-10  min-h-[100vh] ">
       <section className="border border-secondary lg:col-span-2 rounded-xs">
         {data[triggeredIndex] && (
           <section className="flex flex-col gap-4 p-4">
@@ -46,18 +46,18 @@ const Education = () => {
                 <RiGraduationCapFill className="h-20 w-20 text-secondary-foreground" />
               </div>
               <div>
-                <h3 className={`${typo.h4} text-secondary`}>
+                <h3 className={`${typo.display} text-secondary`}>
                   {data[triggeredIndex].institution}
                 </h3>
-                <span className={`${typo.h4} text-secondary-foreground`}>
+                <span className={`${typo.h3} text-secondary-foreground`}>
                   {data[triggeredIndex].level}
                 </span>
-                <p className={`${typo.span} text-secondary`}>
+                <p className={`${typo.small} text-secondary`}>
                   {data[triggeredIndex].date}
                 </p>
               </div>
             </section>
-            <p className={`${typo.h5} text-primary-foreground`}>
+            <p className={`${typo.body} text-primary-foreground`}>
               {data[triggeredIndex].description}
             </p>
             <div className="flex items-center gap-2"></div>
@@ -89,8 +89,8 @@ const Education = () => {
               />
             </div>
             <section>
-              <h4 className={`${typo.h4}`}>{item.institution}</h4>
-              <p className={`${typo.span}`}>{item.date}</p>
+              <h4 className={`${typo.h4} font-semibold`}>{item.institution}</h4>
+              <p className={`${typo.small}`}>{item.date}</p>
             </section>
           </section>
         ))}

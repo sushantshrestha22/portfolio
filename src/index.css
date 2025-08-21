@@ -95,7 +95,7 @@ body {
   --primary-foreground: #f4f4f4;
   --secondary: #1dbefe;
   --secondary-foreground: #ffffff;
-  --muted: oklch(0.97 0 0);
+  --muted: #CDE6F4;
   --muted-foreground: oklch(0.556 0 0);
   --accent: #006faa;
   --accent-foreground: oklch(0.205 0 0);
@@ -137,4 +137,17 @@ body {
 }
 .animate-marquee-vertical {
   animation: marquee-vertical 20s linear infinite;
+}
+
+.animate-contact {
+  animation: contact 1s ease-in-out forwards;
+}
+
+@keyframes contact {
+  0% {
+    right: -25rem;
+  }
+  100% {
+    right: 0;
+  }
 }

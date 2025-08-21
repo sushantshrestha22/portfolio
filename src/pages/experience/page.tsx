@@ -45,13 +45,13 @@ const Experience = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className={`border border-secondary ${
+                  className={`border border-secondary rounded-xs ${
                     isOpen ? "mt-10" : ""
                   } `}
                 >
                   <AccordionTrigger className="flex justify-between items-center p-4 relative cursor-pointer">
                     <section
-                      className={`flex items-start gap-4 ${
+                      className={`flex items-start gap-2 ${
                         isOpen ? "absolute -top-6 flex-col" : ""
                       } `}
                     >
@@ -60,18 +60,18 @@ const Experience = () => {
                       >
                         <RiUserStarFill className={`h-6 w-6 text-primary`} />
                       </span>
-                      <div className="flex flex-col ">
-                        <h4 className={`${typo.h4} text-secondary`}>
+                      <div className="flex flex-col">
+                        <h4 className={`${typo.display} text-secondary`}>
                           {item.company}
                         </h4>
-                        <span className={`${typo.span} text-secondary`}>
+                        <span className={`${typo.small}`}>
                           {item.date}
                         </span>
                       </div>
                     </section>
                   </AccordionTrigger>
-                  <AccordionContent className={`px-4 py-2 ${isOpen ? "mt-16" : ""}`}>
-                    <p className={`${typo.h5} text-primary-foreground`}>
+                  <AccordionContent className={`px-4 py-2 ${isOpen ? "mt-18" : ""}`}>
+                    <p className={`${typo.body} text-primary-foreground`}>
                       {item.description}
                     </p>
                   </AccordionContent>

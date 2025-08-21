@@ -53,7 +53,7 @@ const Projects = () => {
     },
   ];
   return (
-    <main className={` grid  sm:grid-cols-2  lg:grid-cols-3 gap-4 p-4`}>
+    <main className={` grid sm:grid-cols-2  lg:grid-cols-3 gap-4 py-10`}>
       {data.map((project, index) => (
         <section key={index} className={`group border border-secondary p-4`}>
           <div className="relative ">
@@ -68,13 +68,13 @@ const Projects = () => {
             </Link>
             <div className="absolute inset-0 group-hover:bg-black group-hover:opacity-50 transition-all duration-500 ease-in-out"></div>
           </div>
-          <h2 className={`${typo.h4}`}>{project.name}</h2>
-          <p className={`${typo.span}`}>{project.description}</p>
+          <h2 className={`${typo.h4} font-semibold`}>{project.name}</h2>
+          {/* <p className={`${typo.span}`}>{project.description}</p> */}
           <div className="flex flex-wrap gap-2 mt-2">
             {project.tags?.map((tag, idx) => (
               <span
                 key={idx}
-                className="bg-secondary text-primary px-2 py-1 rounded-xs text-xs"
+                className={`${typo.small} bg-accent  px-2 py-1 rounded-xs`}
               >
                 {tag}
               </span>

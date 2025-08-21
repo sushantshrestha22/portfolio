@@ -21,8 +21,11 @@ export default function Layout() {
         <AppSidebar />
 
         <main className="min-w-0 flex-1 bg-primary text-primary-foreground px-2">
-          <div className="flex h-[5vh] justify-between">
+          <div className="flex  bg-transparent ">
             <SidebarTrigger className="hover:bg-primary-foreground hover:text-primary" />
+            <div className="w-full">
+              <Outlet />
+            </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -45,9 +48,8 @@ export default function Layout() {
             </DropdownMenu>
             {/* <div>hello world</div> */}
           </div>
-          <div className=" min-h-[95vh] ">
-            <Outlet />
-          </div>
+          {/* <div className=" min-h-[95vh] bg-primary">
+          </div> */}
         </main>
       </SidebarProvider>
     </>

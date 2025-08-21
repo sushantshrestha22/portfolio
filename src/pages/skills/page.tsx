@@ -15,68 +15,68 @@ import { typo } from "@/constant/typography";
 const data: Skill[] = [
   {
     name: "React",
-    icon: <FaReact className="h-6 w-6" />,
+    icon: <FaReact className="h-10 w-10" />,
   },
   {
     name: "Figma",
-    icon: <FaFigma className="h-6 w-6" />,
+    icon: <FaFigma className="h-10 w-10" />,
   },
   {
     name: "NestJS",
-    icon: <SiNestjs className="h-6 w-6" />,
+    icon: <SiNestjs className="h-10 w-10" />,
   },
   {
     name: "NextJS",
-    icon: <RiNextjsFill className="h-6 w-6" />,
+    icon: <RiNextjsFill className="h-10 w-10" />,
   },
   {
     name: "Swagger",
-    icon: <SiSwagger className="h-6 w-6" />,
+    icon: <SiSwagger className="h-10 w-10" />,
   },
   {
     name: "Postman",
-    icon: <SiPostman className="h-6 w-6" />,
+    icon: <SiPostman className="h-10 w-10" />,
   },
   {
     name: "Tailwind CSS",
-    icon: <RiTailwindCssFill className="h-6 w-6" />,
+    icon: <RiTailwindCssFill className="h-10 w-10" />,
   },
   {
     name: "Node.js",
-    icon: <FaNodeJs className="h-6 w-6" />,
+    icon: <FaNodeJs className="h-10 w-10" />,
   },
   {
     name: "TypeScript",
-    icon: <BiLogoTypescript className="h-6 w-6" />,
+    icon: <BiLogoTypescript className="h-10 w-10" />,
   },
   {
     name: "Shadcn UI",
-    icon: <SiShadcnui className="h-6 w-6" />,
+    icon: <SiShadcnui className="h-10 w-10" />,
   },
 ];
 
 const items = data.map((skill, index) => (
   <div
     key={index}
-    className="flex flex-col aspect-square w-[75%] justify-center items-center gap-2 p-2 bg-secondary rounded-lg shadow-md hover:bg-secondary/80 transition-colors"
+    className="flex flex-col aspect-square  justify-center items-center gap-4 p-2 bg-accent rounded-xs  hover:bg-accent/80 transition-colors"
   >
-    <span className={`${typo.h1}`}>{skill.icon}</span>
-    <span className={`${typo.h5}`}>{skill.name}</span>
+    <span className={`${typo.h1} opacity-60`}>{skill.icon}</span>
+    <span className={`${typo.h4} font-semibold`}>{skill.name}</span>
   </div>
 ));
 const reverseItems = data.reverse().map((skill, index) => (
   <div
     key={index}
-    className="flex flex-col aspect-square w-[75%] justify-center items-center gap-2 p-2 bg-secondary rounded-lg shadow-md hover:bg-secondary/80 transition-colors"
+    className="flex flex-col aspect-square  justify-center items-center gap-4 p-2 bg-accent rounded-xs  hover:bg-secondary/80 transition-colors"
   >
-    <span className={`${typo.h1}`}>{skill.icon}</span>
-    <span className={`${typo.h5}`}>{skill.name}</span>
+    <span className={`${typo.h1} opacity-60`}>{skill.icon}</span>
+    <span className={`${typo.h4} font-semibold`}>{skill.name}</span>
   </div>
 ));
 const Skills = () => {
   return (
-    <div className="grid lg:grid-cols-2 place-items-center px-10 h-[95vh] overflow-hidden">
-      <section className=" justify-center items-end relative h-full  hidden lg:flex">
+    <div className="grid lg:grid-cols-2 place-items-center px-10 h-[100vh] overflow-hidden w-full">
+      <section className="justify-center items-end relative h-full hidden lg:flex ">
         <div className="absolute inset-0 bg-gradient-to-tr from-accent via-accent to-accent blur-3xl rounded-full aspect-square w-[90%] animate-pulse top-3/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
         <img
           src={Photo}
@@ -84,15 +84,15 @@ const Skills = () => {
           className="h-[90vh] object-cover  z-10"
         />
       </section>
-      <section className="flex  justify-center items-center">
-        <div className="relative h-[95vh] w-48 overflow-hidden">
-          <div className="animate-marquee-vertical grid grid-cols-1 gap-2">
+      <section className="flex  justify-center items-center gap-4">
+        <div className="relative h-[100vh] w-48 overflow-hidden">
+          <div className="animate-marquee-vertical grid grid-cols-1 gap-4">
             {items}
             {items}
           </div>
         </div>
-        <div className="relative h-[95vh] w-48 overflow-hidden">
-          <div className="animate-marquee-vertical grid grid-cols-1 gap-2">
+        <div className="relative h-[100vh] w-48 overflow-hidden">
+          <div className="animate-marquee-vertical grid grid-cols-1 gap-4">
             {reverseItems}
             {reverseItems}
           </div>
