@@ -53,7 +53,7 @@ const Projects = () => {
     },
   ];
   return (
-    <main className={` grid sm:grid-cols-2  lg:grid-cols-3 gap-4 py-10`}>
+    <main className={` grid sm:grid-cols-2  lg:grid-cols-3 gap-4 py-4`}>
       {data.map((project, index) => (
         <section key={index} className={`group border border-secondary p-4`}>
           <div className="relative ">

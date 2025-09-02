@@ -1,10 +1,11 @@
 import {
   Calendar,
   ChevronRight,
+  Code,
+  FolderGit2,
+  GraduationCap,
   Home,
-  Inbox,
-  Search,
-  Settings,
+  Phone,
 } from "lucide-react";
 import { FaFacebook, FaLinkedin } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
@@ -81,7 +82,7 @@ export function AppSidebar() {
     {
       title: "Education",
       url: "/education",
-      icon: Inbox,
+      icon: GraduationCap,
     },
     {
       title: "Experience",
@@ -91,17 +92,17 @@ export function AppSidebar() {
     {
       title: "Skills",
       url: "/skills",
-      icon: Search,
+      icon: Code,
     },
     {
       title: "Projects",
       url: "/projects",
-      icon: Settings,
+      icon: FolderGit2,
     },
     {
       title: "Contact",
       url: "/contact",
-      icon: Settings,
+      icon: Phone,
     },
   ];
 

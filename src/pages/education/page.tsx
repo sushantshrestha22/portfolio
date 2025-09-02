@@ -2,6 +2,12 @@ import { typo } from "@/constant/typography";
 import type { Education } from "@/utils/types/types";
 import React from "react";
 import { RiGraduationCapFill } from "react-icons/ri";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Education = () => {
   const [triggeredIndex, setTriggeredIndex] = React.useState<number>(0);
@@ -36,8 +42,8 @@ const Education = () => {
   ];
 
   return (
-    <main className="grid lg:grid-cols-3 gap-4 py-10  min-h-[100vh] ">
-      <section className="border border-secondary lg:col-span-2 rounded-xs">
+    <main className="grid lg:grid-cols-3 gap-4 min-h-[95vh] py-2 box-border ">
+      <section className="border border-secondary lg:col-span-2 rounded-xs h-full max-sm:hidden">
         {data[triggeredIndex] && (
           <section className="flex flex-col gap-4 p-4">
             <section className="flex items-center gap-4">
@@ -65,7 +71,7 @@ const Education = () => {
         )}
       </section>
 
-      <section className="flex flex-col gap-4 justify-between">
+      <section className="flex flex-col gap-4 justify-between max-sm:hidden">
         {data.map((item, index) => (
           <section
             className={`flex items-center gap-4 bg-accent p-4 ${
@@ -94,6 +100,47 @@ const Education = () => {
             </section>
           </section>
         ))}
+      </section>
+      <section>
+        <Accordion
+          type="single"
+          collapsible
+          className="flex flex-col gap-4 sm:hidden"
+          // value={openItem ?? undefined}
+          // onValueChange={(value) => setOpenItem(value)}
+        >
+          {data.map((item, index) => {
+            // const isOpen = openItem === `item-${index}`;
+            return (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className={`border border-secondary rounded-xs
+               
+                 `}
+              >
+                <AccordionTrigger className="flex justify-between items-center p-4 relative cursor-pointer">
+                  <section className={`flex items-start gap-2 `}>
+                    <span className="py-2">
+                      <RiGraduationCapFill className="h-6 w-6 text-secondary-foreground" />
+                    </span>
+                    <div className="flex flex-col">
+                      <h4 className={`${typo.h2} text-secondary`}>
+                        {item.level}
+                      </h4>
+                      <span className={`${typo.small}`}>{item.date}</span>
+                    </div>
+                  </section>
+                </AccordionTrigger>
+                <AccordionContent className={`px-4 py-2 `}>
+                  <p className={`${typo.body} text-primary-foreground`}>
+                    {item.description}
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
       </section>
     </main>
   );

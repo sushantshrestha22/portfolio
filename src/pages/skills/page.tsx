@@ -75,7 +75,7 @@ const reverseItems = data.reverse().map((skill, index) => (
 ));
 const Skills = () => {
   return (
-    <div className="grid lg:grid-cols-2 place-items-center px-10 h-[100vh] overflow-hidden w-full">
+    <div className="grid lg:grid-cols-2 place-items-center sm:px-10 h-[95vh] overflow-hidden w-full">
       <section className="justify-center items-end relative h-full hidden lg:flex ">
         <div className="absolute inset-0 bg-gradient-to-tr from-accent via-accent to-accent blur-3xl rounded-full aspect-square w-[90%] animate-pulse top-3/8 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
         <img
@@ -85,13 +85,13 @@ const Skills = () => {
         />
       </section>
       <section className="flex  justify-center items-center gap-4">
-        <div className="relative h-[100vh] w-48 overflow-hidden">
+        <div className="relative sm:h-[100vh] sm:w-48 w-36 overflow-hidden">
           <div className="animate-marquee-vertical grid grid-cols-1 gap-4">
             {items}
             {items}
           </div>
         </div>
-        <div className="relative h-[100vh] w-48 overflow-hidden">
+        <div className="relative sm:h-[100vh] sm:w-48 w-36 overflow-hidden">
           <div className="animate-marquee-vertical grid grid-cols-1 gap-4">
             {reverseItems}
             {reverseItems}

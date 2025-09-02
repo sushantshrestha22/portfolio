@@ -18,7 +18,7 @@ const Home = () => {
           applications. I focus on clean design, user experience, & continuously
           improving my skills with the latest technologies.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-row gap-4">
           <a href="./Resume.pdf" download="Sushant_Shrestha_Resume.pdf">
             <Button className={`${typo.h3} cursor-pointer`}>View Resume</Button>
           </a>

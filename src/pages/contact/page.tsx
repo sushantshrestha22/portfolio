@@ -87,7 +87,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="relative place-content-center h-[100vh] w-full ">
+      <div className="relative max-sm:mt-6 sm:place-content-center sm:h-[95vh] w-full ">
         {/* <section className="flex flex-col gap-4 max-sm:place-items-center relative">
           <section className="mx-auto place-content-center h-[80%] space-y-4 z-30">
             <img
@@ -111,7 +111,7 @@ const Contact = () => {
             <TextHoverEffect text="Contact" />
           </section>
         </section> */}
-        <section className="xl:w-[75%] border border-accent p-20 xl:pr-40 mx-auto relative space-y-4">
+        <section className="xl:w-[75%] border border-accent p-10 sm:p-18 xl:pr-40 mx-auto relative space-y-4">
           <h2 className={`${typo.display} text-secondary`}>Contact Me</h2>
           <div className="xl:w-[75%]">
             <CreateForm
@@ -139,7 +139,7 @@ const Contact = () => {
             ))}
           </div>
         </div>
-        <div className="text-center py-2 lg:col-span-2 text-xs">
+        <div className="text-center py-2 lg:col-span-2 text-xs ">
           @2025 Sushant Shrestha. All rights reserved.
         </div>
       </div>
