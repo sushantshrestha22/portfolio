@@ -18,31 +18,35 @@ const Education = () => {
       level:
         "Bachelor of Science in Computer Science and Information Technology",
       description:
-        "I am currently pursuing my Bachelor's degree in Computer Science and Information Technology from Tribhuwan University. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer. I am currently pursuing my Bachelor's degree in Computer Science and Information Technology from Tribhuwan University. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer.",
+        "I am pursuing a Bachelor of Science in Computer Science and Information Technology (BSc. CSIT) at Butwal Multiple Campus, where I am gaining in-depth knowledge of programming, software development, database systems, networking, and modern web technologies. This academic journey has not only strengthened my technical expertise but also enhanced my problem-solving abilities, teamwork, and research skills, preparing me to grow as a competent software developer.",
     },
 
     {
-      date: "May 2020- Present",
+      date: "May 2023",
       institution: "HUB I.T Training and Solution",
       level: "Web Development",
-      description: "Graduated with honors, focusing on STEM subjects.",
+      description:
+        "I completed a Web Development training from Hub IT Training and Solution, where I gained practical knowledge of modern web technologies, including HTML, CSS, JavaScript, and React. This training enhanced my ability to build responsive, user-friendly websites and strengthened my foundation in frontend development, which I continue to expand as I move toward becoming a fullstack developer.",
     },
+
     {
-      date: "May 2020- Present",
+      date: "May 2018 - Apr 2020",
       institution: "Scholars Home",
       level: "+2 Science",
-      description: "Graduated with honors, focusing on STEM subjects.",
+      description:
+        "I pursued my Higher Secondary Education from Scholars Home College, specializing in the Science faculty with Mathematics. This stage of my academic journey helped me strengthen my analytical and problem-solving skills while gaining deeper knowledge of scientific principles. It also nurtured my interest in computing and technology, motivating me to further explore computer science and software development in higher studies.",
     },
     {
-      date: "May 2020- Present",
+      date: "upto 2018",
       institution: "New Horizon English Boarding Higher Secondary School",
-      level: "SLC",
-      description: "Graduated with honors, focusing on STEM subjects.",
+      level: "SEE",
+      description:
+        "I completed my Secondary Education (SEE) from New Horizon English Boarding Higher Secondary School, where I gained a solid academic foundation with a focus on science, mathematics, and computer studies. My school years not only strengthened my logical thinking and problem-solving abilities but also shaped my discipline, teamwork, and leadership skills through active participation in both academics and extracurricular activities. This stage of my education played a key role in sparking my interest in technology and laid the groundwork for my journey toward computer science and software development.",
     },
   ];
 
   return (
-    <main className="grid lg:grid-cols-3 gap-4 min-h-[95vh] py-2 box-border ">
+    <main className="grid lg:grid-cols-3 gap-4 min-h-[95vh] p-2 box-border ">
       <section className="border border-secondary lg:col-span-2 rounded-xs h-full max-sm:hidden">
         {data[triggeredIndex] && (
           <section className="flex flex-col gap-4 p-4">

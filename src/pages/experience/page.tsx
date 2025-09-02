@@ -16,13 +16,15 @@ const Experience = () => {
   const data: ExperienceType[] = [
     {
       company: "HubIT Training and Solutions",
-      date: "Sep 2024 - Nov 2024",
+      date: "Aug 2024 - Nov 2024",
+      level: "Intern",
       description:
         "I am currently pursuing my Bachelor's degree in Computer Science and Information Technology from Tribhuwan University. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer. I am currently pursuing my Bachelor's degree in Computer Science and Information Technology from Tribhuwan University. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer.",
     },
     {
       company: "HubIT Training and Solutions",
-      date: "Nov 2024 - Present",
+      date: "Nov 2024 - Aug 2025",
+      level: "Frontend Developer",
       description:
         "I am currently pursuing my Bachelor's degree in Computer Science and Information Technology from Tribhuwan University. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer. I am currently pursuing my Bachelor's degree in Computer Science and Information Technology from Tribhuwan University. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer. I have taken courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, and Web Development. I have also completed several projects in these areas. I am currently working on a project that involves building a web application using React.js,Next.js and others.I am excited to continue learning and growing as a software developer.",
     },
@@ -113,7 +115,9 @@ const Experience = () => {
                         <h4 className={`${typo.display} text-secondary`}>
                           {item.company}
                         </h4>
-                        <span className={`${typo.small}`}>{item.date}</span>
+                        <span className={`${typo.small}`}>
+                          {item.date} ({item.level}){" "}
+                        </span>
                       </div>
                     </section>
                   </AccordionTrigger>

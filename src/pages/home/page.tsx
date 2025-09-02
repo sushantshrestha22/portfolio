@@ -10,13 +10,16 @@ const Home = () => {
         <header>
           <h4 className={`${typo.h4}`}>Hi, I'm Sushant Shrestha</h4>
           <h3 className={`${typo.display} text-secondary font-bold`}>
-           A Web Developer.
+            A Web Developer.
           </h3>
         </header>
         <p className={`${typo.h4} font-normal text-primary-foreground`}>
-          I'm a frontend developer passionate about building modern web
-          applications. I focus on clean design, user experience, & continuously
-          improving my skills with the latest technologies.
+          I’m a passionate Frontend Developer with expertise in building
+          responsive, user-friendly, and visually appealing web applications.
+          Skilled in modern frameworks like React and experienced in crafting
+          seamless user experiences with clean, efficient code. Currently
+          expanding my skills in backend development to grow into a Fullstack
+          Developer.
         </p>
         <div className="flex flex-row gap-4">
           <a href="./Resume.pdf" download="Sushant_Shrestha_Resume.pdf">

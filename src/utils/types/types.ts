@@ -28,6 +28,7 @@ export interface ExperienceType {
   company: string;
   date: string;
   description: string;
+  level: string;
 }
 
 export interface Skill {
