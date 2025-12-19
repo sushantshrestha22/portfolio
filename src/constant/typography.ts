@@ -1,6 +1,6 @@
 export const typo = {
   display:
-    "text-[clamp(2.25rem,1.5vw+1rem,6rem)] leading-[1.1] tracking-[-0.02em] font-bold",
+    "text-[clamp(2.25rem,1.5vw+3rem,6rem)] leading-[1.1] tracking-[-0.02em] font-bold",
   h1: "text-[clamp(1.875rem,1.2vw+1rem,3.75rem)] leading-[1.15] tracking-[-0.015em] font-bold",
   h2: "text-[clamp(1.5rem,1vw+0.8rem,3rem)] leading-[1.2] tracking-[-0.01em] font-bold",
   h3: "text-[clamp(1.25rem,0.8vw+0.6rem,2.25rem)] leading-[1.25] tracking-[0em] font-semibold",

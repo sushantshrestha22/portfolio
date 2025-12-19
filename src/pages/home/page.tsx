@@ -1,46 +1,46 @@
+import ShinyText from "@/components/ShinyText";
+import SplitText from "@/components/SplitText";
 import { Button } from "@/components/ui/button";
 import { typo } from "@/constant/typography";
-import Photo from "@/assets/images/photo.png";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <main className=" grid grid-cols-1 lg:grid-cols-2 place-items-center min-h-[95vh] px-4 sm:px-8 lg:px-10">
-      <section className="w-full max-w-xl lg:place-content-center h-auto lg:h-full max-lg:p-4 lg:space-y-4 order-2 lg:order-1 max-lg:border border-secondary space-y-4 rounded-xs">
-        <header>
-          <h4 className={`${typo.h4}`}>Hi, I'm Sushant Shrestha</h4>
-          <h3 className={`${typo.display} text-secondary font-bold`}>
-            A Web Developer.
-          </h3>
-        </header>
-        <p className={`${typo.h4} font-normal text-primary-foreground`}>
-          I’m a passionate Frontend Developer with expertise in building
-          responsive, user-friendly, and visually appealing web applications.
-          Skilled in modern frameworks like React and experienced in crafting
-          seamless user experiences with clean, efficient code. Currently
-          expanding my skills in backend development to grow into a Fullstack
-          Developer.
-        </p>
-        <div className="flex flex-row gap-4">
-          <a href="./Resume.pdf" download="Sushant_Shrestha_Resume.pdf">
-            <Button className={`${typo.h3} cursor-pointer`}>View Resume</Button>
-          </a>
-          <Link to="/contact">
-            <Button variant="outline" className={`${typo.h3}`}>
-              Contact Me
-            </Button>
-          </Link>
-        </div>
-      </section>
-      <section className="w-full flex justify-center items-end h-full lg:h-[95vh] relative order-1 lg:order-2 max-lg:border-b border-secondary">
-        <div className="absolute inset-0 bg-gradient-to-tr from-accent via-accent to-accent blur-3xl rounded-full aspect-square w-[80vw] max-w-[90%] lg:max-w-[90%] animate-pulse top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 " />
-
-        <img
-          src={Photo}
-          alt="Sushant Shrestha"
-          className="h-[40vh] sm:h-[60vh] lg:h-[90vh] z-10 object-contain"
+    <main className=" flex flex-col items-center justify-center gap-8 h-screen px-4 text-center">
+      <header>
+        <h3 className={`${typo.h3} text-secondary font-medium tracking-wide`}>
+          Software Developer
+        </h3>
+        <SplitText
+          text="Hello, I'm Sushant Shrestha!"
+          className={` ${typo.display} text-secondary font-bold tracking-wide w-2xl`}
+          delay={100}
+          duration={0.6}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
         />
+      </header>
+      <p className={`${typo.h4} text-secondary/75 max-w-3xl mx-auto`}>
+        Crafting exceptional web experiences with React and modern JavaScript.
+        Specializing in clean, scalable code and pixel-perfect designs. Evolving
+        into full-stack development to build end-to-end solutions.
+      </p>
+      <section className="flex flex-row justify-center gap-4">
+        <Button className={`${typo.h3} cursor-pointer`}>View My Work</Button>
+        <Button variant="outline" className={`${typo.h3}`}>
+          Get In Touch
+        </Button>
       </section>
+      <ShinyText
+        text="Trusted by 10+ clients"
+        disabled={false}
+        speed={3}
+        className={`custom-class ${typo.h3} text-center`}
+      />
     </main>
   );
 };

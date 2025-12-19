@@ -1,62 +1,16 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { Outlet, useLocation } from "react-router-dom";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { Outlet } from "react-router-dom";
 
-import { AppSidebar } from "@/common/app-sidebar";
-import { Moon, Sun } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/components/theme-provider";
-import { typo } from "@/constant/typography";
+import DarkVeil from "@/components/DarkVeil";
 
 export default function Layout() {
-  const { setTheme } = useTheme();
-  const location = useLocation();
   return (
     <>
-      <SidebarProvider className="">
-        <AppSidebar />
-
-        <main className="min-w-0 flex-1 bg-primary text-primary-foreground px-2">
-          <div className="flex bg-transparent justify-between h-[5vh]  items-center">
-            <SidebarTrigger className="hover:bg-primary-foreground hover:text-primary" />
-
-            <span className={`${typo.h3} uppercase underline text-secondary`}>
-              {location.pathname.split("/")[1]}
-            </span>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild className="h-[4vh] w-[4vh]">
-                <Button variant="outline" size="icon">
-                  <Sun className="h-[0.75rem] w-[0.75rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                  <Moon className="absolute h-[0.75rem] w-[0.75rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  Light
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  Dark
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
-                  System
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            {/* <div>hello world</div> */}
-          </div>
-          {/* <div className=" min-h-[95vh] bg-primary">
-          </div> */}
-          <div className="w-full">
-            <Outlet />
-          </div>
-        </main>
+      <SidebarProvider className="relative">
+       
+        <div className="w-full absolute top-0 left-0 pointer-events-auto">
+          <Outlet />
+        </div>
       </SidebarProvider>
     </>
   );
