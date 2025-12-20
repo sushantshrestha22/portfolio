@@ -12,7 +12,6 @@ import { contactSchema } from "@/schema/contact";
 import { contactFields } from "@/common/fields/contact/field";
 import { Mail, MapPinHouse, Phone } from "lucide-react";
 import { typo } from "@/constant/typography";
-import { useNavigate } from "react-router-dom";
 
 interface ContactFormData {
   name: string;
@@ -22,7 +21,6 @@ interface ContactFormData {
 }
 
 const Contact = () => {
-  const navigate = useNavigate();
   const defaultValues: ContactFormData = {
     name: " ",
     phone: " ",
@@ -73,7 +71,6 @@ const Contact = () => {
       if (res.data.success) {
         console.log("Success", res);
         toast.success("Contact form submitted successfully!");
-        navigate("/");
         // window.location.href = "/"; // Redirect to home page after successful submission
         // Form will be reset automatically by CreateForm component
       } else {

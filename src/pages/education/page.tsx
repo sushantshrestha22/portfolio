@@ -1,5 +1,5 @@
 import { typo } from "@/constant/typography";
-import type { Education } from "@/utils/types/types";
+import type { EducationType } from "@/utils/types/types";
 import React from "react";
 import { RiGraduationCapFill } from "react-icons/ri";
 import {
@@ -11,7 +11,7 @@ import {
 
 const Education = () => {
   const [triggeredIndex, setTriggeredIndex] = React.useState<number>(0);
-  const data: Education[] = [
+  const data: EducationType[] = [
     {
       date: "May 2020- Present",
       institution: "Butwal Multiple Campus, Tribhuwan University",
@@ -46,7 +46,7 @@ const Education = () => {
   ];
 
   return (
-    <main className="grid lg:grid-cols-3 gap-4 min-h-[95vh] p-2 box-border ">
+    <main className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-4 min-h-[95vh] p-2 box-border ">
       <section className="border border-secondary lg:col-span-2 rounded-xs h-full max-sm:hidden">
         {data[triggeredIndex] && (
           <section className="flex flex-col gap-4 p-4">
