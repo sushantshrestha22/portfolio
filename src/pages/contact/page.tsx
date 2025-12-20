@@ -166,7 +166,7 @@ const Contact = () => {
                     Available for Work
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Currently accepting new projects starting January 2025
+                    Currently accepting new projects starting immediately.
                   </p>
                 </div>
 
@@ -190,7 +190,7 @@ const Contact = () => {
                     size="lg"
                     onClick={() =>
                       window.open(
-                        "https://linkedin.com/in/yourusername",
+                        "https://www.linkedin.com/in/sushant-shrestha-880911279/",
                         "_blank"
                       )
                     }
