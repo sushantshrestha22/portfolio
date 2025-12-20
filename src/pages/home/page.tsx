@@ -9,7 +9,7 @@ const Home = () => {
   const stats = [
     {
       icon: Briefcase,
-      value: "2+",
+      value: "1+",
       label: "Years Experience",
       color: "text-blue-500",
     },
@@ -21,7 +21,7 @@ const Home = () => {
     },
     {
       icon: FolderGit2,
-      value: "20+",
+      value: "10+",
       label: "Projects Completed",
       color: "text-purple-500",
     },
