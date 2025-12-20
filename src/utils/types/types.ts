@@ -26,9 +26,14 @@ export interface SocialLink {
 
 export interface ExperienceType {
   company: string;
-  date: string;
-  description: string;
-  level: string;
+  duration: string;
+  description: string[];
+  title: string;
+  projects?: {
+    name: string;
+    technologies: string[];
+    link?: string;
+  }[];
 }
 
 export interface Skill {
