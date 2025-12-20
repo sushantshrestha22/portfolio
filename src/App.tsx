@@ -1,11 +1,10 @@
 import { ThemeProvider } from "./components/theme-provider";
 import Home from "./pages/home/page";
 import { AppSidebar } from "./common/app-sidebar";
-import DarkVeil from "./components/DarkVeil";
 // import Education from "./pages/education/page";
 // import Projects from "./pages/projects/page";
 // import Skills from "./pages/skills/page";
-// import Contact from "./pages/contact/page";
+import Contact from "./pages/contact/page";
 import About from "./pages/about/page";
 import { Construction } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
@@ -13,20 +12,25 @@ import { Card, CardContent } from "./components/ui/card";
 const App = () => {
   return (
     <ThemeProvider>
-      <div className="w-full h-screen fixed top-0 left-0 pointer-events-none overflow-hidden">
+      {/* Custom Cursor Effects */}
+
+      {/* <div className="w-full h-screen fixed top-0 left-0 pointer-events-none overflow-hidden">
         <DarkVeil hueShift={0} speed={2} scanlineIntensity={0} />
-      </div>
+      </div> */}
       <section className="fixed left-10 top-0 h-screen w-20 border-border flex-col flex items-start justify-center pt-8 z-50 max-sm:hidden ">
         <AppSidebar />
       </section>
-      <div className="w-full z-10 relative h-screen">
+      <div className="w-full z-10 relative h-screen ">
         <section id="home">
           <Home />
         </section>
         <section id="about">
           <About />
         </section>
-        
+        <section id="contact">
+          <Contact />
+        </section>
+
         {/* Under Development Section */}
         <section className="min-h-screen flex items-center justify-center py-20 px-4">
           <Card className="max-w-2xl mx-auto bg-card border-border">
@@ -37,13 +41,15 @@ const App = () => {
                   <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-pulse" />
                 </div>
               </div>
-              
+
               <div className="space-y-3">
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
                   Portfolio Under Development
                 </h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md mx-auto">
-                  I'm currently crafting something special. Additional sections including Projects, Skills, Experience, and Contact will be available soon.
+                  I'm currently crafting something special. Additional sections
+                  including Projects, Skills, Experience, and Contact will be
+                  available soon.
                 </p>
               </div>
 
@@ -66,9 +72,7 @@ const App = () => {
         {/* <section id="skills">
           <Skills />
         </section>
-        <section id="contact">
-          <Contact />
-        </section>
+      
         <section id="education">
           <Education />
         </section> */}

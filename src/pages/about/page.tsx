@@ -1,6 +1,7 @@
 import Profile from "../../assets/images/Profile.png";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Code, Briefcase, FolderGit2, Sparkles } from "lucide-react";
 
 const About = () => {
   const coreExpertise = [
@@ -14,16 +15,63 @@ const About = () => {
     },
     {
       title: "State Management",
-      skills: ["React Query", "Context API", "Redux", "Zustand"],
+      skills: ["React Query", "Context API"],
     },
     {
       title: "Tools & Workflow",
       skills: ["Git/GitHub", "Vite", "REST APIs", "Agile/Scrum"],
     },
   ];
-
+  const stats = [
+    {
+      icon: Briefcase,
+      value: "1+",
+      label: "Years Experience",
+      color: "text-blue-500",
+    },
+    {
+      icon: Code,
+      value: "15+",
+      label: "Technologies",
+      color: "text-green-500",
+    },
+    {
+      icon: FolderGit2,
+      value: "10+",
+      label: "Projects Completed",
+      color: "text-purple-500",
+    },
+    {
+      icon: Sparkles,
+      value: "100%",
+      label: "Client Satisfaction",
+      color: "text-yellow-500",
+    },
+  ];
   return (
-    <section id="about" className="py-10 relative bg-card">
+    <section
+      id="about"
+      className="py-10 bg-card relative space-y-12 sm:space-y-16 "
+    >
+      {/* Stats Grid */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-7xl mx-auto px-4">
+        {stats.map((stat, index) => (
+          <Card
+            key={index}
+            className="bg-secondary/5  border-border hover:border-primary/50 hover:shadow-md transition-all duration-300"
+          >
+            <CardContent className="p-4 sm:p-6 text-center space-y-2 sm:space-y-3">
+              <stat.icon
+                className={`w-6 h-6 sm:w-8 sm:h-8 mx-auto ${stat.color}`}
+              />
+              <h3 className="text-2xl sm:text-3xl font-bold">{stat.value}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-tight">
+                {stat.label}
+              </p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
       <div className="max-w-7xl mx-auto px-4 space-y-20">
         {/* Header with Stats */}
         <div className="text-center space-y-12">
@@ -47,25 +95,29 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-secondary/80 leading-relaxed">
                 <p>
-                  I specialize in crafting modern, responsive interfaces using
-                  React, Tailwind CSS, and TypeScript. My development approach
-                  emphasizes clean architecture, reusable components, and
-                  consistent design patterns to deliver maintainable and
-                  high-quality solutions.
+                  As a frontend developer, I architect and implement
+                  sophisticated user interfaces leveraging React, TypeScript,
+                  and modern CSS frameworks. My methodology centers on scalable
+                  component architecture, type-safe development practices, and
+                  adherence to industry-standard design patterns that ensure
+                  long-term maintainability and optimal performance.
                 </p>
                 <p>
-                  During my internship at{" "}
-                  <span className="text-secondary font-semibold">
-                    Hub IT Pvt. Ltd.
-                  </span>
-                  , I contributed to production-level projects, including a CMS
-                  platform, collaborating with cross-functional teams to deliver
-                  features used in live environments.
+                  I bring proven expertise in delivering production-grade
+                  applications, having architected enterprise-level CMS
+                  platforms and complex web solutions. My collaborative approach
+                  in agile environments, combined with a deep understanding of
+                  user experience principles, enables me to transform business
+                  requirements into intuitive, high-performing digital
+                  experiences.
                 </p>
                 <p>
-                  Currently expanding my expertise into backend development with
-                  Node.js and databases to become a versatile full-stack
-                  developer, focused on building complete, scalable solutions.
+                  Currently advancing my technical repertoire through backend
+                  technologies including Node.js and database systems,
+                  positioning myself as a comprehensive full-stack engineer
+                  capable of delivering end-to-end solutions. My commitment to
+                  continuous learning ensures I remain at the forefront of web
+                  development innovation and best practices.
                 </p>
               </div>
             </CardContent>
@@ -79,9 +131,6 @@ const About = () => {
                   alt="Profile"
                   className="w-full h-full object-cover object-top"
                 />
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold shadow-lg">
-                Available for Work
               </div>
             </div>
           </div>
@@ -129,8 +178,6 @@ const About = () => {
               <div className="flex flex-wrap gap-2">
                 {[
                   "React Router",
-                  "Three.js",
-                  "GSAP",
                   "Framer Motion",
                   "Axios",
                   "Formik",
@@ -138,6 +185,10 @@ const About = () => {
                   "VS Code",
                   "Postman",
                   "Figma",
+                  "Swagger",
+                  "Nestjs",
+                  "Express.js",
+                  "MongoDB",
                 ].map((tech, index) => (
                   <Badge
                     key={index}

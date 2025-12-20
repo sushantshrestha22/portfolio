@@ -1,12 +1,4 @@
-import {
-  Calendar,
-  Code,
-  FolderGit2,
-  GraduationCap,
-  Home,
-  Phone,
-} from "lucide-react";
-
+import {HatGlasses,  Phone, User } from "lucide-react";
 
 import {
   Tooltip,
@@ -22,28 +14,14 @@ export function AppSidebar() {
     {
       title: "Home",
       url: "home",
-      icon: Home,
+      icon: HatGlasses,
     },
     {
-      title: "Education",
-      url: "education",
-      icon: GraduationCap,
+      title: "About",
+      url: "about",
+      icon: User,
     },
-    {
-      title: "Experience",
-      url: "experience",
-      icon: Calendar,
-    },
-    {
-      title: "Skills",
-      url: "skills",
-      icon: Code,
-    },
-    {
-      title: "Projects",
-      url: "projects",
-      icon: FolderGit2,
-    },
+
     {
       title: "Contact",
       url: "contact",
@@ -66,8 +44,7 @@ export function AppSidebar() {
           >
             <Tooltip>
               <TooltipTrigger asChild className="w-8 h-8 p-1 rounded-full">
-                <item.icon className="w-4 h-4 text-secondary hover:text-primary hover:bg-secondary/5  transition-colors duration-300 cursor-pointer" />
-               
+                <item.icon className="w-4 h-4 text-secondary transition-colors duration-300 cursor-pointer" />
               </TooltipTrigger>
               <TooltipContent side="right">{item.title}</TooltipContent>
             </Tooltip>

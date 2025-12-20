@@ -1,150 +1,213 @@
-import React from "react";
-// import WhiteLogo from "@/assets/images/white-logo.png";
-
-import { CreateForm } from "@/common/form/create";
-// import { contactSchema } from "@/schema/conatct";
-// import { contactFields } from "@/common/field/contact/fields";
-// import { TextHoverEffect } from "@/components/ui/text-hover-effect";
-import toast from "react-hot-toast";
-import axios from "axios";
-// import { Link } from "react-router-dom";
-import { contactSchema } from "@/schema/contact";
-import { contactFields } from "@/common/fields/contact/field";
-import { Mail, MapPinHouse, Phone } from "lucide-react";
-import { typo } from "@/constant/typography";
-
-interface ContactFormData {
-  name: string;
-  phone: string;
-  email: string;
-  message: string;
-}
+import {
+  Mail,
+  MapPinHouse,
+  Phone,
+  Send,
+  Github,
+  Linkedin,
+  MessageSquare,
+} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
-  const defaultValues: ContactFormData = {
-    name: " ",
-    phone: " ",
-    email: " ",
-    message: " ",
-  };
-
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const contactInfo = [
     {
-      title: "Contact",
-      icon: <Phone className="h-6 w-6" />,
+      title: "Phone",
+      icon: Phone,
       description: "+977 9840967031",
+      link: "tel:+9779840967031",
+      color: "text-green-500",
     },
     {
       title: "Email",
-      icon: <Mail className="h-6 w-6" />,
+      icon: Mail,
       description: "newasushant.ns16@gmail.com",
+      link: "mailto:newasushant.ns16@gmail.com",
+      color: "text-blue-500",
     },
     {
-      title: "Address",
-      icon: <MapPinHouse className="h-6 w-6" />,
+      title: "Location",
+      icon: MapPinHouse,
       description: "Butwal-11, Rupandehi, Nepal",
+      link: "https://maps.google.com/?q=Butwal,Nepal",
+      color: "text-red-500",
     },
   ];
 
-  const onSubmit = async (data: ContactFormData) => {
-    try {
-      setIsSubmitting(true);
-      const object = {
-        name: data.name,
-        phone: data.phone,
-        email: data.email,
-        message: data.message,
-        access_key: "68609b0f-79b6-4275-8302-46ce6a62666f",
-      };
-
-      const json = JSON.stringify(object);
-      console.log("Submitting form data:", json);
-
-      const res = await axios.post("https://api.web3forms.com/submit", json, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
-
-      if (res.data.success) {
-        console.log("Success", res);
-        toast.success("Contact form submitted successfully!");
-        // window.location.href = "/"; // Redirect to home page after successful submission
-        // Form will be reset automatically by CreateForm component
-      } else {
-        console.log("Failed", res);
-        toast.error("Failed to submit contact form. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("An error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false); // Reset submitting state
-      // Reset form or handle final state
-    }
-  };
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/sushantshrestha22",
+      color: "hover:text-purple-500",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://www.linkedin.com/in/sushant-shrestha-880911279/",
+      color: "hover:text-blue-500",
+    },
+  ];
 
   return (
-    <>
-      <div className="relative max-sm:mt-6 sm:place-content-center sm:h-[95vh] w-full ">
-        {/* <section className="flex flex-col gap-4 max-sm:place-items-center relative">
-          <section className="mx-auto place-content-center h-[80%] space-y-4 z-30">
-            <img
-              src={WhiteLogo}
-              alt="Logo"
-              className=" aspect-square h-20 w-20"
-            />
-            <p className="text-secondary ">
-              Open for new collaborations, freelance work, and creative
-              partnerships.
-            </p>
-            <ul className="flex gap-4 relative ">
-              {contactInfo.map((info, idx) => (
-                <Link key={idx} to={info.link} target="_blank">
-                  <li className="text-accent">{info.icon}</li>
-                </Link>
-              ))}
-            </ul>
-          </section>
-          <section className="absolute bottom-0 left-0 right-0 z-20">
-            <TextHoverEffect text="Contact" />
-          </section>
-        </section> */}
-        <section className="xl:w-[75%] border border-accent p-10 sm:p-18 xl:pr-40 mx-auto relative space-y-4">
-          <h2 className={`${typo.display} text-secondary`}>Contact Me</h2>
-          <div className="xl:w-[75%]">
-            <CreateForm
-              fields={contactFields}
-              defaultValues={defaultValues}
-              onSubmit={onSubmit}
-              validationSchema={contactSchema}
-              title1="User"
-              titleLink1="/users"
-              titleLink2="/users/create"
-              isSubmitting={isSubmitting}
-            />
+    <section id="contact" className="min-h-screen py-20 lg:py-32 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16 lg:mb-20">
+          <Badge variant="outline" className="mb-4 px-4 py-1.5">
+            <MessageSquare className="w-3 h-3 mr-1.5" />
+            Get In Touch
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Let's Work Together
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Have a project in mind or want to discuss opportunities? I'd love to
+            hear from you. Let's create something amazing together.
+          </p>
+        </div>
+
+        {/* Contact Content */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+          {/* Contact Information */}
+          <div className="space-y-6">
+            <Card className="bg-card ">
+              <CardHeader>
+                <h3 className="text-xl sm:text-2xl font-semibold">
+                  Contact Information
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Feel free to reach out through any of these channels
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {contactInfo.map((info, index) => (
+                  <a
+                    key={index}
+                    href={info.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group"
+                  >
+                    <div
+                      className={`p-3 bg-primary/10 rounded-lg ${info.color} group-hover:scale-110 transition-transform`}
+                    >
+                      <info.icon className="h-5 w-5" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-sm font-semibold text-foreground mb-1">
+                        {info.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground break-words">
+                        {info.description}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Social Links */}
+            <Card className="bg-card border-secondary/50">
+              <CardContent className="p-6">
+                <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
+                <div className="flex flex-wrap gap-3">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg bg-card border border-border ${social.color} hover:border-primary/50 transition-all group`}
+                    >
+                      <social.icon className="h-4 w-4" />
+                      <span className="text-sm font-medium">{social.name}</span>
+                    </a>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </section>
-        <div className="w-[20rem] max-xl:hidden 2xl:w-[25rem] h-[20rem] mt-8 bg-accent absolute right-0 top-[50%] -translate-y-2/3 rounded-xs shadow-lg animate-contact place-items-center place-content-center ">
-          <div className="">
-            {contactInfo.map((info, index) => (
-              <div key={index} className="flex items-center gap-4 p-4 ">
-                <div className="">{info.icon}</div>
-                <div>
-                  <h3 className={typo.h3}>{info.title}</h3>
-                  <p className={typo.body}>{info.description}</p>
+
+          {/* Call to Action Card */}
+          <Card className="bg-card border-border h-fit">
+            <CardContent className="p-8 space-y-6">
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold">Ready to Start?</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  I'm currently available for freelance projects and full-time
+                  opportunities. Let's discuss how I can help bring your ideas
+                  to life.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    Available for Work
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    Currently accepting new projects starting January 2025
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <Button
+                    variant="secondary"
+                    className="w-full py-6 text-base font-medium"
+                    size="lg"
+                    onClick={() =>
+                      (window.location.href =
+                        "mailto:newasushant.ns16@gmail.com")
+                    }
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Send Me an Email
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    className="w-full py-6 text-base font-medium hover:text-blue-500"
+                    size="lg"
+                    onClick={() =>
+                      window.open(
+                        "https://linkedin.com/in/yourusername",
+                        "_blank"
+                      )
+                    }
+                  >
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    Connect on LinkedIn
+                  </Button>
                 </div>
               </div>
-            ))}
-          </div>
+
+              <div className="pt-4 border-t border-secondary/50">
+                <p className="text-xs text-muted-foreground text-center">
+                  I typically respond within 24 hours
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-        <div className="text-center py-2 lg:col-span-2 text-xs ">
-          @2025 Sushant Shrestha. All rights reserved.
+
+        {/* Footer */}
+        <div className="text-center pt-8 border-t border-border">
+          <p className="text-sm text-muted-foreground">
+            © 2025 Sushant Shrestha. All rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground mt-2">
+            Built with React, TypeScript & Tailwind CSS
+          </p>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

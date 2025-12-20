@@ -50,72 +50,72 @@ body {
 
 :root {
   --radius: 0.625rem;
-  --background: #f8f9fc;
-  --foreground: #1a1d29;
+  --background: #fafbfc;
+  --foreground: #0E1118;
   --card: #ffffff;
-  --card-foreground: #1a1d29;
+  --card-foreground: #0E1118;
   --popover: #ffffff;
-  --popover-foreground: #1a1d29;
-  --primary: #510DCE;
+  --popover-foreground: #0E1118;
+  --primary: #0E1118;
   --primary-foreground: #ffffff;
-  --secondary: #1a1d29;
-  --secondary-foreground: #f8f9fc;
-  --muted: #f1f3f9;
+  --secondary: #6b7280;
+  --secondary-foreground: #fafbfc;
+  --muted: #f3f4f6;
   --muted-foreground: #6b7280;
-  --accent: #510DCE;
+  --accent: #0E1118;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #510DCE;
-  --chart-1: #510DCE;
-  --chart-2: #7c3aed;
-  --chart-3: #a78bfa;
-  --chart-4: #c4b5fd;
-  --chart-5: #ddd6fe;
+  --ring: #0E1118;
+  --chart-1: #0E1118;
+  --chart-2: #1d212a;
+  --chart-3: #3d4451;
+  --chart-4: #5d6471;
+  --chart-5: #7d8491;
   --sidebar: #ffffff;
-  --sidebar-foreground: #1a1d29;
-  --sidebar-primary: #510DCE;
+  --sidebar-foreground: #0E1118;
+  --sidebar-primary: #0E1118;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f1f3f9;
-  --sidebar-accent-foreground: #1a1d29;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #0E1118;
   --sidebar-border: #e5e7eb;
-  --sidebar-ring: #510DCE;
+  --sidebar-ring: #0E1118;
 }
 
 .dark {
   --radius: 0.625rem;
-  --background: #0f1117;
-  --foreground: #f8f9fc;
-  --card: #1a1d29;
-  --card-foreground: #f8f9fc;
-  --popover: #1a1d29;
-  --popover-foreground: #f8f9fc;
-  --primary: #510DCE;
+  --background: #0E1118;
+  --foreground: #e5e7eb;
+  --card: #161923;
+  --card-foreground: #e5e7eb;
+  --popover: #161923;
+  --popover-foreground: #e5e7eb;
+  --primary: #0E1118;
   --primary-foreground: #ffffff;
-  --secondary: #f8f9fc;
-  --secondary-foreground: #1a1d29;
-  --muted: #262a38;
+  --secondary: #e5e7eb;
+  --secondary-foreground: #0E1118;
+  --muted: #1d212a;
   --muted-foreground: #9ca3af;
-  --accent: #510DCE;
+  --accent: #0E1118;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
-  --border: #262a38;
-  --input: #262a38;
-  --ring: #510DCE;
-  --chart-1: #510DCE;
-  --chart-2: #7c3aed;
-  --chart-3: #a78bfa;
-  --chart-4: #c4b5fd;
-  --chart-5: #ddd6fe;
-  --sidebar: #1a1d29;
-  --sidebar-foreground: #f8f9fc;
-  --sidebar-primary: #510DCE;
+  --border: #1d212a;
+  --input: #1d212a;
+  --ring: #0E1118;
+  --chart-1: #0E1118;
+  --chart-2: #1d212a;
+  --chart-3: #3d4451;
+  --chart-4: #5d6471;
+  --chart-5: #7d8491;
+  --sidebar: #161923;
+  --sidebar-foreground: #e5e7eb;
+  --sidebar-primary: #0E1118;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #262a38;
-  --sidebar-accent-foreground: #f8f9fc;
-  --sidebar-border: #262a38;
-  --sidebar-ring: #510DCE;
+  --sidebar-accent: #1d212a;
+  --sidebar-accent-foreground: #e5e7eb;
+  --sidebar-border: #1d212a;
+  --sidebar-ring: #0E1118;
 }
 
 @layer base {
@@ -171,4 +171,40 @@ html {
 
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+/* Custom Cursor Styles */
+
+
+/* Custom cursor dot following mouse */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #0E1118;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #0E1118;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.2s ease-out;
+  opacity: 0.5;
+}
+
+/* Hover state for interactive elements */
+a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring {
+  transform: scale(1.5);
+  opacity: 0.8;
+  border-color: #1d212a;
 }
