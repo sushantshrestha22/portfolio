@@ -1,11 +1,6 @@
 import { HatGlasses, Phone, User, Menu, X } from "lucide-react";
 import { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 
 import {
   Tooltip,
