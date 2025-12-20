@@ -26,22 +26,34 @@ const Experience = () => {
       projects: [
         {
           name: "Logistic Ride Sharing App (Sathi) Admin Panel",
-          technologies: ["React.js", "Next.js", "CSS"],
+          technologies: ["React.js", "TailwindCSS", "Shadcn UI", "TypeScript"],
           link: "https://play.google.com/store/apps/details?id=com.np.hubit.sathi&hl=en",
         },
         {
           name: "Chamber of Commerce & Industry ERP & Finance Management Software",
-          technologies: ["React.js", "Next.js", "tailwind CSS"],
+          technologies: ["React.js", "TailwindCSS", "Shadcn UI", "TypeScript"],
           link: "https://bcci.org.np/",
         },
         {
           name: "Devdaha Medical College Web, Journal & CMS Software",
-          technologies: ["React.js", "Next.js", "CSS"],
+          technologies: [
+            "React.js",
+            "Next.js",
+            "TailwindCSS",
+            "Shadcn UI",
+            "TypeScript",
+          ],
           link: "https://www.devdahamedicalcollege.edu.np/",
         },
         {
           name: "Tilottama Campus Web & CMS Software",
-          technologies: ["React.js", "Next.js", "CSS"],
+          technologies: [
+            "React.js",
+            "Next.js",
+            "TailwindCSS",
+            "Shadcn UI",
+            "TypeScript",
+          ],
           link: "",
         },
       ],
@@ -60,17 +72,29 @@ const Experience = () => {
       projects: [
         {
           name: "Rotaract Club of Central Siyari Club Management System",
-          technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+          technologies: [
+            "React.js",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Shadcn UI",
+          ],
           link: "https://rotaractsiyari.org.np/",
         },
         {
           name: "Nordes Corporate Website and CMS Software",
-          technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+          technologies: [
+            "React.js",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Shadcn UI",
+          ],
           link: "https://nordes.fi/",
         },
         {
           name: "Bato The Road Platform CMS Software",
-          technologies: ["React.js", "TypeScript", "Tailwind CSS"],
+          technologies: ["React.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
           link: "https://uat.batotheroad.com/",
         },
       ],
@@ -85,10 +109,10 @@ const Experience = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Briefcase className="w-6 h-6 text-primary" />
+              <Briefcase className="w-6 h-6 text-secondary" />
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+              <h3 className="text-xl sm:text-2xl font-bold text-secondary">
                 {experience.title}
               </h3>
               <p className="text-base sm:text-lg font-semibold text-neutral-600 dark:text-neutral-400">
@@ -100,15 +124,15 @@ const Experience = () => {
 
         {/* Responsibilities */}
         <div className="space-y-3">
-          <h4 className="text-base font-semibold text-neutral-800 dark:text-neutral-200 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary" />
+          <h4 className="text-base font-semibold text-secondary flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-secondary" />
             Key Responsibilities
           </h4>
           <ul className="space-y-2">
             {experience.description.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
-                <span className="text-xs md:text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-secondary/50 flex-shrink-0" />
+                <span className="text-xs md:text-sm leading-relaxed text-secondary dark:text-neutral-300">
                   {item}
                 </span>
               </li>
@@ -122,10 +146,10 @@ const Experience = () => {
             value="projects"
             className="border-neutral-200 dark:border-neutral-800"
           >
-            <AccordionTrigger className="hover:no-underline py-3">
-              <h4 className="text-base font-semibold text-neutral-800 dark:text-neutral-200 flex items-center gap-2">
-                <Folder className="w-5 h-5 text-primary" />
-                Notable Projects ({experience?.projects?.length})
+            <AccordionTrigger className="hover:no-underline py-3 ">
+              <h4 className="text-base font-semibold text-secondary flex items-center gap-2 group">
+                <Folder className="w-5 h-5 text-secondary" />
+                Notable Projects{" "}
               </h4>
             </AccordionTrigger>
             <AccordionContent>
@@ -138,20 +162,20 @@ const Experience = () => {
                     rel="noopener noreferrer"
                     className="group"
                   >
-                    <Card className="h-full bg-neutral-50 dark:bg-neutral-900/50 border-neutral-200 dark:border-neutral-800 hover:border-primary/50 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all duration-300 cursor-pointer">
+                    <Card className="h-full bg-card border-neutral-200  transition-all duration-300 cursor-pointer">
                       <CardContent className="p-4 space-y-3">
                         <div className="flex items-start justify-between gap-2">
-                          <h5 className="font-semibold text-neutral-800 dark:text-neutral-200 text-sm leading-tight group-hover:text-primary transition-colors">
+                          <h5 className="font-semibold text-secondary text-sm leading-tight group-hover:text-secondary transition-colors">
                             {project.name}
                           </h5>
-                          <ExternalLink className="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-primary flex-shrink-0 transition-colors" />
+                          <ExternalLink className="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-secondary flex-shrink-0 transition-colors" />
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech, techIdx) => (
                             <Badge
                               key={techIdx}
                               variant="outline"
-                              className="text-xs px-2 py-1 bg-neutral-100 dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700"
+                              className="text-xs px-2 py-1 "
                             >
                               {tech}
                             </Badge>
@@ -170,9 +194,26 @@ const Experience = () => {
   }));
 
   return (
-    <main className="min-h-screen bg-background">
+    <main
+      className="min-h-screen relative 
+    flex flex-col items-center justify-center py-16 px-4 md:px-8 
+    "
+    >
+
       {/* Timeline */}
-      <Timeline data={timelineData} />
+      <div className="text-center space-y-12 ">
+        <div className="space-y-4">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+            Experience
+          </h2>
+          <p className="text-secondary/70 text-lg max-w-2xl mx-auto">
+            A journey through my professional experiences and notable
+          </p>
+        </div>
+      </div>
+      <div>
+        <Timeline data={timelineData} />
+      </div>
     </main>
   );
 };

@@ -10,6 +10,7 @@ import {
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Particles from "@/components/Particles";
 
 const Contact = () => {
   const contactInfo = [
@@ -53,6 +54,18 @@ const Contact = () => {
 
   return (
     <section id="contact" className="min-h-screen py-20 lg:py-32 relative">
+      <div className="absolute inset-0 ">
+        <Particles
+          particleColors={["#ffffff", "#ffffff"]}
+          particleCount={500}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={false}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
