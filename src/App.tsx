@@ -8,7 +8,7 @@ import Experience from "./pages/experience/page";
 const App = () => {
   return (
     <ThemeProvider>
-      <section className="fixed right-0 max-sm:top-0  sm:bottom-0 h-screen  z-50 p-2 flex items-end max-sm:h-auto max-sm:w-full max-sm:justify-end">
+      <section className="fixed right-0 top-0   h-screen  z-50 p-2 flex items-start max-sm:h-auto max-sm:w-full max-sm:justify-end">
         <AppSidebar />
       </section>
       <div className="w-full z-10 relative h-screen ">

@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SpotlightCard from "@/components/SpotlightCard";
 
 const Experience = () => {
   const experienceData: ExperienceType[] = [
@@ -162,27 +163,32 @@ const Experience = () => {
                     rel="noopener noreferrer"
                     className="group"
                   >
-                    <Card className="h-full bg-card border-neutral-200  transition-all duration-300 cursor-pointer">
-                      <CardContent className="p-4 space-y-3">
-                        <div className="flex items-start justify-between gap-2">
-                          <h5 className="font-semibold text-secondary text-sm leading-tight group-hover:text-secondary transition-colors">
-                            {project.name}
-                          </h5>
-                          <ExternalLink className="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-secondary flex-shrink-0 transition-colors" />
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech, techIdx) => (
-                            <Badge
-                              key={techIdx}
-                              variant="outline"
-                              className="text-xs px-2 py-1 "
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <SpotlightCard
+                      className="custom-spotlight-card"
+                      spotlightColor="rgba(59, 130, 246, 0.2)"
+                    >
+                      <Card className="h-full transition-all duration-300 cursor-pointer">
+                        <CardContent className="p-6 space-y-4">
+                          <div className="flex items-start justify-between gap-2">
+                            <h5 className="font-semibold text-secondary text-sm leading-tight group-hover:text-secondary transition-colors">
+                              {project.name}
+                            </h5>
+                            <ExternalLink className="w-4 h-4 text-neutral-500 dark:text-neutral-400 group-hover:text-secondary flex-shrink-0 transition-colors" />
+                          </div>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech, techIdx) => (
+                              <Badge
+                                key={techIdx}
+                                variant="outline"
+                                 className="px-3 py-1.5 text-xs font-medium"
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </SpotlightCard>
                   </a>
                 ))}
               </div>
@@ -196,12 +202,11 @@ const Experience = () => {
   return (
     <main
       className="min-h-screen relative 
-    flex flex-col items-center justify-center py-16 px-4 md:px-8 
+    flex flex-col items-center justify-center py-10   px-4 md:px-8 bg-card
     "
     >
-
       {/* Timeline */}
-      <div className="text-center space-y-12 ">
+      <div className="text-center space-y-10 ">
         <div className="space-y-4">
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
             Experience

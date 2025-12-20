@@ -53,7 +53,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="min-h-screen py-20 lg:py-32 relative">
+    <section id="contact" className="min-h-screen py-10 lg:py-20 relative">
       <div className="absolute inset-0 ">
         <Particles
           particleColors={["#ffffff", "#ffffff"]}

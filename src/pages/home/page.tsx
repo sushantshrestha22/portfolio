@@ -9,7 +9,7 @@ const Home = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -51,6 +51,10 @@ const Home = () => {
             />
           </header>
 
+          <p className="text-sm sm:text-base lg:text-lg text-secondary max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+            Web Developer | Frontend Enthusiast | Learning Backend to become
+            Fullstack
+          </p>
           <p className="text-sm sm:text-base lg:text-lg text-secondary/50 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Crafting exceptional web experiences with React and modern
             JavaScript. Focused on clean, scalable code and thoughtful UI.
@@ -62,7 +66,7 @@ const Home = () => {
             <Button
               variant="secondary"
               className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-medium"
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection("about")}
             >
               View My Work
             </Button>
@@ -70,7 +74,7 @@ const Home = () => {
             <Button
               variant="outline"
               className="w-full border sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-medium"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
             >
               Get In Touch
             </Button>
@@ -78,9 +82,9 @@ const Home = () => {
 
           <div className="pt-2">
             <ShinyText
-              text="Building real-world products with modern web technologies"
+              text="Trusted by 10+ clients"
               speed={3}
-              className="text-xs sm:text-sm text-muted-foreground text-center"
+              className="text-sm sm:text-lg text-muted-foreground text-center"
             />
           </div>
         </section>

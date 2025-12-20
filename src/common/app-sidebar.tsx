@@ -1,6 +1,5 @@
-import { HatGlasses, Phone, User, Menu, X } from "lucide-react";
+import { HatGlasses, Phone, User, Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
-
 
 import {
   Tooltip,
@@ -26,6 +25,11 @@ export function AppSidebar() {
       icon: User,
     },
     {
+      title: "Experience",
+      url: "experience",
+      icon: Sparkles,
+    },
+    {
       title: "Contact",
       url: "contact",
       icon: Phone,
@@ -35,7 +39,7 @@ export function AppSidebar() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -45,7 +49,7 @@ export function AppSidebar() {
         containerClassName="rounded-full"
         as="div"
         className={`flex flex-col items-center rounded-full  bg-card/50 backdrop-blur-sm transition-all duration-500 ease-in-out ${
-          isOpen ? 'py-2 px-1' : 'p-0'
+          isOpen ? "py-2 px-1" : "p-0"
         }`}
       >
         {/* Toggle Button */}
@@ -53,7 +57,7 @@ export function AppSidebar() {
           <TooltipTrigger asChild>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className=" rounded-full flex items-center bg-secondary text-primary justify-center transition-all duration-300 group p-2 border border-secondary/20" 
+              className=" rounded-full flex items-center bg-secondary text-primary justify-center transition-all duration-300 group p-2 border border-secondary/20"
             >
               {isOpen ? (
                 <X className="w-4 h-4  text-primary  group-hover:rotate-90 transition-all duration-300" />
@@ -63,14 +67,14 @@ export function AppSidebar() {
             </button>
           </TooltipTrigger>
           <TooltipContent side="right" className="font-medium">
-            {isOpen ? 'Close Menu' : 'Open Menu'}
+            {isOpen ? "Close Menu" : "Open Menu"}
           </TooltipContent>
         </Tooltip>
 
         {/* Navigation Items with Animation */}
         <div
           className={`flex flex-col items-center gap-1 overflow-hidden transition-all duration-500 ease-in-out ${
-            isOpen ? 'max-h-[500px] opacity-100 mt-1' : 'max-h-0 opacity-0'
+            isOpen ? "max-h-[500px] opacity-100 mt-1" : "max-h-0 opacity-0"
           }`}
         >
           {items.map((item, index) => (
@@ -78,8 +82,8 @@ export function AppSidebar() {
               key={index}
               className="transition-all duration-300 ease-in-out"
               style={{
-                transitionDelay: isOpen ? `${index * 100}ms` : '0ms',
-                transform: isOpen ? 'translateY(0)' : 'translateY(-10px)',
+                transitionDelay: isOpen ? `${index * 100}ms` : "0ms",
+                transform: isOpen ? "translateY(0)" : "translateY(-10px)",
               }}
             >
               <Tooltip>
