@@ -68,7 +68,7 @@ const Home = () => {
               className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-medium"
               onClick={() => scrollToSection("about")}
             >
-              Learn More About Me
+              Learn More
             </Button>
 
             <Button
