@@ -35,7 +35,7 @@ const Home = () => {
         <section className="flex min-h-[calc(100vh-15rem)] flex-col justify-center text-center space-y-6 sm:space-y-8">
           <header className="space-y-3 sm:space-y-4">
             <h3 className={`${typo.h3} text-muted-foreground tracking-wide`}>
-              Software Developer
+              Software Engineer
             </h3>
 
             <SplitText
@@ -52,7 +52,7 @@ const Home = () => {
           </header>
 
           <p className="text-sm sm:text-base lg:text-lg text-secondary max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-            Web Developer | Frontend Enthusiast | Learning Backend to become
+            Software Engineer | Frontend Enthusiast | Learning Backend to become
             Fullstack
           </p>
           <p className="text-sm sm:text-base lg:text-lg text-secondary/50 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
@@ -68,7 +68,7 @@ const Home = () => {
               className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-medium"
               onClick={() => scrollToSection("about")}
             >
-              View My Work
+              Learn More About Me
             </Button>
 
             <Button
